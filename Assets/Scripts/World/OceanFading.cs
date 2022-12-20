@@ -8,6 +8,8 @@ namespace World {
         private Camera _cam;
 
         [SerializeField] private MeshRenderer _simpleWaterMesh = null;
+        [SerializeField] private Material _simpleWaterOpaqueMat = null;
+        [SerializeField] private Material _simpleWaterTranspMat = null;
         [SerializeField] private float _transitionStartHeight = 500f;
         [SerializeField] private float _transitionEndHeight = 1000f;
 
@@ -20,14 +22,22 @@ namespace World {
             if (!_cam) Debug.LogWarning("OceanFading: no camera found");
             if (!_simpleWaterMesh) Debug.LogWarning("OceanFading: no simpleWaterMesh assigned");
             else _simpleWaterMesh.gameObject.SetActive(false);
+            if (!_simpleWaterOpaqueMat) Debug.LogWarning("OceanFading: no opaque water mat assigned");
+            if (!_simpleWaterTranspMat) Debug.LogWarning("OceanFading: no transparent water mat assigned");
+            else _simpleWaterMesh.material = _simpleWaterTranspMat;
             _simpleWaterColor = _simpleWaterMesh.material.color;
         }
 
         private void Update() {
             _currCamHeight = _cam.transform.position.y;
 
-            if (_waterSurface.enabled && _currCamHeight > _transitionEndHeight) _waterSurface.enabled = false;
-            else if (!_waterSurface.enabled && _currCamHeight < _transitionEndHeight) _waterSurface.enabled = true;
+            if (_waterSurface.enabled && _currCamHeight > _transitionEndHeight) {
+                _waterSurface.enabled = false;
+                _simpleWaterMesh.material = _simpleWaterOpaqueMat;
+            } else if (!_waterSurface.enabled && _currCamHeight < _transitionEndHeight) {
+                _waterSurface.enabled = true;
+                _simpleWaterMesh.material = _simpleWaterTranspMat;
+            }
 
             if (!_simpleWaterMesh.gameObject.activeSelf && _currCamHeight > _transitionStartHeight) _simpleWaterMesh.gameObject.SetActive(true);
             else if (_simpleWaterMesh.gameObject.activeSelf && _currCamHeight < _transitionStartHeight) _simpleWaterMesh.gameObject.SetActive(false);
