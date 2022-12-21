@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 7833.8374, g: 7137.719, b: 8173.782, a: 1}
+  m_IndirectSpecularColor: {r: 7825.6104, g: 7124.188, b: 8141.9233, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -356,6 +356,8 @@ MonoBehaviour:
   _sunMaxHeight: 55
   _startTime: 9
   _dayDuration: 480
+  _enableSunLightTime: 4.8
+  _disableSunLightTime: 19.2
   <CurrTime>k__BackingField: 9
 --- !u!1 &432432459
 GameObject:
@@ -724,6 +726,8 @@ MonoBehaviour:
   _sunMaxHeight: 40
   _startTime: 11
   _dayDuration: 480
+  _enableSunLightTime: 5
+  _disableSunLightTime: 19
   <CurrTime>k__BackingField: 11
 --- !u!114 &1103252248
 MonoBehaviour:
