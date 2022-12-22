@@ -1,0 +1,553 @@
+fileFormatVersion: 2
+guid: ec2a37c995f984c758e38bf30436544f
+ModelImporter:
+  serializedVersion: 22200
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: ad003_director_mk51_a
+    second: {fileID: 2800000, guid: e3a31ae631da24654be898f7533f01af, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: ad027_director_mk57_a
+    second: {fileID: 2800000, guid: 51ee66d015a7b49bfa521b9fb1b14601, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: ad042_director_mk37_mod2_a
+    second: {fileID: 2800000, guid: d48d38273f1264e8394d5588e75390ca, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: ad044_director_mk54_a
+    second: {fileID: 2800000, guid: c8d08438dc812422abaff2576977f41a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: aga002_40mm_bofors_mk1_a
+    second: {fileID: 2800000, guid: d41a59abebc7a47a0a25fefb0b87a2a6, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: aga003_20mm_oerlikon_mk4_a
+    second: {fileID: 2800000, guid: 8d4c1589fc126415c9bd91c2daea9812, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: aga056_40mm_bofors_a
+    second: {fileID: 2800000, guid: bbda356385db64b2b974feffe3525de7, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: ags099_5in54_mk16_a
+    second: {fileID: 2800000, guid: 5a515bec31b604217a178ebaf61b4cd2, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am001_bollard_2_a
+    second: {fileID: 2800000, guid: 7aebd4a9d913445f5918f48dd71dd0e2, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am003_fairlead_1_a
+    second: {fileID: 2800000, guid: 3c37776c533e7478495fbd06c577e429, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am006_reels_1_a
+    second: {fileID: 2800000, guid: e2534d4eeed4a44db94015f1008c770a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am018_compass_binnacle_a
+    second: {fileID: 2800000, guid: 74813aaede5bc474fadead880a90f690, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am024_hatch_2_a
+    second: {fileID: 2800000, guid: be5abc572f85144dab2f0fb01eab1823, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am029_ammunition_box_a
+    second: {fileID: 2800000, guid: 9645a12246beb4d589f239b0d1b8445f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am038_searchlight_600mm_a
+    second: {fileID: 2800000, guid: 0bf94abe6eca649f3ade0ce8e3f99f57, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am042_ye_homing_beacon_a
+    second: {fileID: 2800000, guid: 78d8f8d3a2620421f88db58f4d7b07ad, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am045_running_lights_f_a
+    second: {fileID: 2800000, guid: 0d206e7d99f0343f097993296621f58f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am061_sky_lookout_1_a
+    second: {fileID: 2800000, guid: a207ac0284f85401db2793ccdd0b81a3, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am063_wind_direction_a
+    second: {fileID: 2800000, guid: 1550ded6db6d14327aaa93be5a9aa0fa, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am068_hatch_3_a
+    second: {fileID: 2800000, guid: 4f77e7ddde12841169708dce018931e7, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am072_ships_bell_a
+    second: {fileID: 2800000, guid: 49f708e83a65e4a3f8828ef42a7f23e0, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am073_floater_net_basket_a
+    second: {fileID: 2800000, guid: a4959b68135f04fbf9792b45fceaac5d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am077_paravane_a
+    second: {fileID: 2800000, guid: 2005062c3b29645939087bdae0af0ad1, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am080_whips_antenna_a
+    second: {fileID: 2800000, guid: 55f9a3a983f324301bcbbc7a07d764b7, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am088_capstan_a
+    second: {fileID: 2800000, guid: f17d7cce5a8e74569a7a9883cab9b2c8, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am091_motor_boats_a
+    second: {fileID: 2800000, guid: 267fbee23978e457680323657eab617d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am098_sirena_a
+    second: {fileID: 2800000, guid: 7e69035b66fad4adcbafe4eb6141fa85, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am100_spare_barrel_tube_a
+    second: {fileID: 2800000, guid: cfae6afffe12048be9f6d0471379991e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am105_signal_lamp_3_a
+    second: {fileID: 2800000, guid: dadce41938f444d9e806807a0e846812, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am108_reels_4_a
+    second: {fileID: 2800000, guid: 50a1e66bfe3294ba69ede1f7294fbe70, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am114_freon_cylinder_acetylene_a
+    second: {fileID: 2800000, guid: b1250b9a98e9c4d9585993642146ed80, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am115_rdf_a
+    second: {fileID: 2800000, guid: e9c0d188feb154ac3af9e06f9671f423, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am129_turtles_box_a
+    second: {fileID: 2800000, guid: 37fadd8bc18ac44bca6af8b54927ac0a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am132_flag_box_a
+    second: {fileID: 2800000, guid: c56acbcc91a7b48899ef37600b47f2f7, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am133_boat_7_a
+    second: {fileID: 2800000, guid: 495c85bfe8a8c4cb59763b21abf294dc, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am150_telegraph_engine_a
+    second: {fileID: 2800000, guid: c68ed01d66f1f41e5a3cd855c09b764f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am154_switch_panel_1_a
+    second: {fileID: 2800000, guid: 063cabd2480fa44feb7072cb8409f032, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am157_telephone_a
+    second: {fileID: 2800000, guid: eed5ab9bad9f646c5af3a86ae1c0521d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am159_voice_tube_a
+    second: {fileID: 2800000, guid: bb73f2e69db8c4ff69734fa9241b43ed, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am173_insulator_a
+    second: {fileID: 2800000, guid: 19e5b0e59f83341549744e55b8c08e5a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am176_target_desingnator_a
+    second: {fileID: 2800000, guid: 966410380c7e447cb82cfeb134c6acab, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am177_ammunition_box_8_a
+    second: {fileID: 2800000, guid: 3738ee3b8f42c455881f6390ab3d40be, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am189_gasoline_station_a
+    second: {fileID: 2800000, guid: cd2a7b3aa83814416bbf7849bfe9b16f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am237_motor_launch_24ft_a
+    second: {fileID: 2800000, guid: a370fdaad1ac8492c888c69afef6983a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am243_service_rack_mk12_a
+    second: {fileID: 2800000, guid: 2ad9034188f7a4cc6ba567314a26fa62, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am293_reels_a
+    second: {fileID: 2800000, guid: 3148da56e844a4ca9891851c60bd5945, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am298_flight_control_light_r_a
+    second: {fileID: 2800000, guid: 55800d65ae942482e83ec1d044695821, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am299_flight_control_light_l_a
+    second: {fileID: 2800000, guid: 928d73083941f4e888b7a8e1f6b1760b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am350_filling_connection_a
+    second: {fileID: 2800000, guid: b73ec840af3e546febef75c4daa06ac9, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am351_flag_box_a
+    second: {fileID: 2800000, guid: 5520b9821136a434188beae94d2bc3db, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am363_sound_reproducer_a
+    second: {fileID: 2800000, guid: 827b6e494033446c091ad1ca7fec09d6, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am387_control_panel_a
+    second: {fileID: 2800000, guid: a1535cef6b0e74241bcef1aae05ca0b2, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am433_mc_box_a
+    second: {fileID: 2800000, guid: 82bd3dfb3cc5d44729cd024f65122c07, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am448_antenna_cpn6_477_19_baseColor
+    second: {fileID: 2800000, guid: 7fd385a878ba145838fa0e2a6d75196e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am448_antenna_cpn6_477_80_baseColor
+    second: {fileID: 2800000, guid: 47e47917aba5c4dc1961936682e3cd90, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am448_antenna_cpn6_477_81_baseColor
+    second: {fileID: 2800000, guid: 0ee3939bc88104068a601a35f74d2ad7, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am448_antenna_cpn6_477_82_baseColor
+    second: {fileID: 2800000, guid: 89e03c4a9d9dc44d8ba60088a836d689, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am448_antenna_cpn6_a
+    second: {fileID: 2800000, guid: d53149efdbe034170b2efdd22b00e4f4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am465_fire_extinguisher_a
+    second: {fileID: 2800000, guid: aabd98eef83374a56a1ecb823855f904, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am511_crescent_davit_a
+    second: {fileID: 2800000, guid: 762ce68252f1b4e7ead1e39339209bf2, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am514_boat_winch_a
+    second: {fileID: 2800000, guid: f2195d61e99184ed289f42c48047d373, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am535_elec_panel_a
+    second: {fileID: 2800000, guid: 20e4ec323913f414d9e213d4ab522577, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am550_aircraft_crane_a
+    second: {fileID: 2800000, guid: 064d589bcde464a2ab6d228b06e12502, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am554_speed_light_ctrl_a
+    second: {fileID: 2800000, guid: 1a4bb41bf8d53426ab071cc0d35377a6, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am558_telegraph_a
+    second: {fileID: 2800000, guid: b5de5fb7dd0a8411e81575405482431e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am559_alarm_tool_a
+    second: {fileID: 2800000, guid: 94fdeda59919c485fb460ba7bb3aab81, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am567_motor_boat_26ft_a
+    second: {fileID: 2800000, guid: 636ca66d3bec540e4a7669ffacaa0e75, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am595_filling_a
+    second: {fileID: 2800000, guid: 65c9307378c4f45029e3c950f0e94370, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am602_pelorus_a
+    second: {fileID: 2800000, guid: bbf54ec77dff641e38217e97e930d658, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am603_fairlead_a
+    second: {fileID: 2800000, guid: bf30deb1f55014d87bd89d72e5418d34, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am651_radar_mk12_a
+    second: {fileID: 2800000, guid: e7ae8e83f086149dd962423aea7ce182, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: am712_pelorus_a
+    second: {fileID: 2800000, guid: d812c4ad52d604182bf26ce86db5b4d5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: ars011_radar_sk2_a
+    second: {fileID: 2800000, guid: 6db0310dc3508458f83b7bf0dd92e874, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: ars016_radar_sx_a
+    second: {fileID: 2800000, guid: e43c8b5f6013949cf9dc4ae2d228b9b8, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: ars069_sr_2_a
+    second: {fileID: 2800000, guid: 29baae860cfe648a3b960058633758b5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: ars114_radar_sg_a
+    second: {fileID: 2800000, guid: 56f02a1649f234f2d9011859cde95c02, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: asa015_midway_1945_deckhouse_a
+    second: {fileID: 2800000, guid: e534ef016bb8149f1aeeabfcb0c9a838, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: asa015_midway_1945_hull_a
+    second: {fileID: 2800000, guid: 7323205fd9ee3417ba49222f119bb133, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: asa015_midway_1945_underwater_a
+    second: {fileID: 2800000, guid: ddfe319c76b6d4b06a338881a163617a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: cm002_propeller_4b_a
+    second: {fileID: 2800000, guid: 6ca4336a93256485f81e1bf15d77fd3a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: cm004_barbette_out_a
+    second: {fileID: 2800000, guid: 6bcd745aaed4142a8b8d11e631a9acd3, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: cm010_fire_hose_reel_a
+    second: {fileID: 2800000, guid: 0004bba38c3e443649845bacf80818d8, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: cm028_swab_rack_a
+    second: {fileID: 2800000, guid: 9e057d1779d9240d9bdf944997766254, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: cm029_emergency_box_a
+    second: {fileID: 2800000, guid: 5edcfa370964b485687b5926f005a5b8, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: cm052_fender_a
+    second: {fileID: 2800000, guid: 8613b2b09cddc4ea690190b00aa4df76, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: cm056_ships_bell_a
+    second: {fileID: 2800000, guid: 3d873a48a039942308ae61884589161c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: cm081_life_buoy_a
+    second: {fileID: 2800000, guid: 5f70ac2c1d7e5485bb680846f6cbb01c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: cm093_rope_a
+    second: {fileID: 2800000, guid: fd7b3984b91f84c51ac88b29ff779f2f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: cm096_ladder_a
+    second: {fileID: 2800000, guid: d947652b29a8240958663140396cb3c7, type: 3}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
