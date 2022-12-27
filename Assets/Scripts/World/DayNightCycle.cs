@@ -33,8 +33,9 @@ namespace World {
         private void Update() {
             CurrTime = (CurrTime + (Time.deltaTime / _dayDuration * 24f)) % 24f;
 
-            if (!_light.enabled && CurrTime > _enableSunLightTime && CurrTime < _disableSunLightTime) _light.enabled = true;
-            else if (_light.enabled && CurrTime > _disableSunLightTime) _light.enabled = false;
+            if (!_light.enabled) {
+                if (CurrTime > _enableSunLightTime && CurrTime < _disableSunLightTime) _light.enabled = true;
+            } else if (CurrTime < _enableSunLightTime || CurrTime > _disableSunLightTime) _light.enabled = false;
 
             if (CurrTime > _enableSunLightTime && CurrTime < _disableSunLightTime) UpdateSunPos();
         }

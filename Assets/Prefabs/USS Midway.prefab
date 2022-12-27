@@ -881,9 +881,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb4fc3533799a46049749e296b580e1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _offset: 0
-  _interval: 2
+  _startDelayCtx: {fileID: 6584856911219860671}
+  _interval: 3
   _duration: 1
+  _offset: 0
 --- !u!1 &411350346407985513
 GameObject:
   m_ObjectHideFlags: 0
@@ -5093,9 +5094,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb4fc3533799a46049749e296b580e1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _offset: 0.425
-  _interval: 0.85
+  _startDelayCtx: {fileID: 6584856911219860671}
+  _interval: 1
   _duration: 0.15
+  _offset: 0.5
 --- !u!1 &5241020359894155235
 GameObject:
   m_ObjectHideFlags: 0
@@ -8982,9 +8984,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb4fc3533799a46049749e296b580e1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _offset: 0
-  _interval: 0.85
+  _startDelayCtx: {fileID: 6584856911219860671}
+  _interval: 1
   _duration: 0.15
+  _offset: 0
 --- !u!1001 &2457309236988173879
 PrefabInstance:
   m_ObjectHideFlags: 0

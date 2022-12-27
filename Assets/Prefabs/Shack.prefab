@@ -340,9 +340,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb4fc3533799a46049749e296b580e1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _offset: 0
-  _interval: 3
+  _startDelayCtx: {fileID: 4780570242046116042}
+  _interval: 4
   _duration: 1
+  _offset: 0
 --- !u!1001 &202393310572640792
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -31,16 +31,19 @@ namespace World {
         private void Update() {
             _currCamHeight = _cam.transform.position.y;
 
-            if (_waterSurface.enabled && _currCamHeight > _transitionEndHeight) {
-                _waterSurface.enabled = false;
-                _simpleWaterMesh.material = _simpleWaterOpaqueMat;
-            } else if (!_waterSurface.enabled && _currCamHeight < _transitionEndHeight) {
+            if (_waterSurface.enabled) {
+                if (_currCamHeight > _transitionEndHeight) {
+                    _waterSurface.enabled = false;
+                    _simpleWaterMesh.material = _simpleWaterOpaqueMat;
+                }
+            } else if (_currCamHeight < _transitionEndHeight) {
                 _waterSurface.enabled = true;
                 _simpleWaterMesh.material = _simpleWaterTranspMat;
             }
 
-            if (!_simpleWaterMesh.gameObject.activeSelf && _currCamHeight > _transitionStartHeight) _simpleWaterMesh.gameObject.SetActive(true);
-            else if (_simpleWaterMesh.gameObject.activeSelf && _currCamHeight < _transitionStartHeight) _simpleWaterMesh.gameObject.SetActive(false);
+            if (!_simpleWaterMesh.gameObject.activeSelf) {
+                if (_currCamHeight > _transitionStartHeight) _simpleWaterMesh.gameObject.SetActive(true);
+            } else if (_currCamHeight < _transitionStartHeight) _simpleWaterMesh.gameObject.SetActive(false);
 
             if (_currCamHeight > _transitionStartHeight && _currCamHeight < _transitionEndHeight) {
                 _simpleWaterColor.a = Mathf.InverseLerp(_transitionStartHeight, _transitionEndHeight, _currCamHeight);
