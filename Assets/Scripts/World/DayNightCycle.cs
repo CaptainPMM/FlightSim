@@ -3,12 +3,15 @@ using UnityEngine;
 namespace World {
     [RequireComponent(typeof(Light))]
     public class DayNightCycle : MonoBehaviour {
+        public static DayNightCycle Main { get; private set; }
+
         private const int SECONDS_PER_DAY = 86400;
         private const float DEFAULT_START_TIME = 14.00f;
 
         private Light _light;
 
         [Header("Setup")]
+        [SerializeField] private bool _mainTimeSource = true;
         [SerializeField, Range(0f, 90f)] private float _sunMaxHeight = 55f;
         [SerializeField, Range(0f, 23.99f)] private float _startTime = DEFAULT_START_TIME;
         [SerializeField, Min(0f), Tooltip("86400 (seconds) is real-time")] private int _dayDuration = SECONDS_PER_DAY;
@@ -19,6 +22,8 @@ namespace World {
         [field: SerializeField, Range(0f, 23.99f)] public float CurrTime { get; set; } = DEFAULT_START_TIME;
 
         private void Awake() {
+            if (_mainTimeSource) Main = this;
+
             _light = GetComponent<Light>();
             if (!_light) Debug.LogWarning("DayNightCycle: no light found");
 
