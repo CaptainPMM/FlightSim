@@ -643,9 +643,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26cd1f8b3533f4722bcbb7285e04c8db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _torque: 0
+  _wheelModel: {fileID: 5807704944199135584}
+  _wheelFunction: 5
+  _maxBrake: 25
+  _maxSteerAngle: 0
+  _maxTorque: 250
   _brake: 0
   _steerAngle: 0
+  _torque: 0
 --- !u!1 &1454496972986451820
 GameObject:
   m_ObjectHideFlags: 0
@@ -1034,9 +1039,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26cd1f8b3533f4722bcbb7285e04c8db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _torque: 0
+  _wheelModel: {fileID: 5687017558449816034}
+  _wheelFunction: 2
+  _maxBrake: 0
+  _maxSteerAngle: 80
+  _maxTorque: 0
   _brake: 0
   _steerAngle: 0
+  _torque: 0
 --- !u!1 &4304338148830234255
 GameObject:
   m_ObjectHideFlags: 0
@@ -2521,6 +2531,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8523b61ae6c974007b8728e65a6c953c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _wheels:
+  - {fileID: 6677541412268529544}
+  - {fileID: 5883369795366522510}
+  - {fileID: 6179986132818508809}
   _lights:
   - {fileID: 2634785942627236484}
   - {fileID: 1022086100929685044}
@@ -3132,9 +3146,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26cd1f8b3533f4722bcbb7285e04c8db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _torque: 0
+  _wheelModel: {fileID: 5187701615543328815}
+  _wheelFunction: 5
+  _maxBrake: 25
+  _maxSteerAngle: 0
+  _maxTorque: 250
   _brake: 0
   _steerAngle: 0
+  _torque: 0
 --- !u!1001 &5978597252121663391
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8201,80 +8220,29 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5657212707018969538, guid: e5ddc6e4011b0430ba5019474be21fac,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 3998665055147089799}
-    - targetCorrespondingSourceObject: {fileID: 229309029114593094, guid: e5ddc6e4011b0430ba5019474be21fac,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 8600512673896419439}
-    - targetCorrespondingSourceObject: {fileID: 2793447247766458416, guid: e5ddc6e4011b0430ba5019474be21fac,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 7115773326916685294}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5ddc6e4011b0430ba5019474be21fac, type: 3}
---- !u!1 &2052034483223758429 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5657212707018969538, guid: e5ddc6e4011b0430ba5019474be21fac,
+--- !u!4 &5187701615543328815 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -7708379547708115024, guid: e5ddc6e4011b0430ba5019474be21fac,
     type: 3}
   m_PrefabInstance: {fileID: 5978597252121663391}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &3998665055147089799
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2052034483223758429}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33bf9b46069be4cc999e687691d51fee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _wheelCollider: {fileID: 4154281453212860618}
---- !u!1 &5897065545017895129 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 229309029114593094, guid: e5ddc6e4011b0430ba5019474be21fac,
+--- !u!4 &5687017558449816034 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -7200016857479702915, guid: e5ddc6e4011b0430ba5019474be21fac,
     type: 3}
   m_PrefabInstance: {fileID: 5978597252121663391}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &8600512673896419439
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+--- !u!4 &5807704944199135584 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -9051915954210838785, guid: e5ddc6e4011b0430ba5019474be21fac,
+    type: 3}
+  m_PrefabInstance: {fileID: 5978597252121663391}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5897065545017895129}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33bf9b46069be4cc999e687691d51fee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _wheelCollider: {fileID: 4654324206164547206}
 --- !u!4 &6157133153303261300 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e5ddc6e4011b0430ba5019474be21fac,
     type: 3}
   m_PrefabInstance: {fileID: 5978597252121663391}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &8375692547711764399 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2793447247766458416, guid: e5ddc6e4011b0430ba5019474be21fac,
-    type: 3}
-  m_PrefabInstance: {fileID: 5978597252121663391}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &7115773326916685294
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8375692547711764399}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33bf9b46069be4cc999e687691d51fee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _wheelCollider: {fileID: 8826623691750374632}
