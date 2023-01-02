@@ -43,7 +43,7 @@ namespace Planes {
         private void ReadWheelInputs() {
             _wheelsByFunction[WheelFunction.Brake].ForEach(wc => wc.Brake = Input.GetAxis("Brake") * wc.MaxBrake);
             _wheelsByFunction[WheelFunction.Steer].ForEach(wc => wc.SteerAngle = Input.GetAxis("Yaw") * wc.MaxSteerAngle);
-            _wheelsByFunction[WheelFunction.Torque].ForEach(wc => wc.Torque = Mathf.InverseLerp(-1f, 1f, Input.GetAxis("WheelTorque")) * wc.MaxTorque);
+            _wheelsByFunction[WheelFunction.Torque].ForEach(wc => wc.Torque += Input.GetAxis("WheelTorque") * wc.MaxTorque);
         }
 
         private void ReadLightInputs() {

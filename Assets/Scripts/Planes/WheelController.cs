@@ -23,7 +23,7 @@ namespace Planes {
         public float Brake {
             get => _brake;
             set {
-                _brake = Mathf.Max(0f, value);
+                _brake = Mathf.Clamp(value, 0f, _maxBrake);
                 _wc.brakeTorque = _brake;
             }
         }
@@ -39,7 +39,7 @@ namespace Planes {
         public float Torque {
             get => _torque;
             set {
-                _torque = Mathf.Max(0f, value);
+                _torque = Mathf.Clamp(value, 0f, _maxTorque);
                 _wc.motorTorque = _torque;
             }
         }
