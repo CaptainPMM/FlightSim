@@ -41,14 +41,12 @@ namespace Planes {
         }
 
         private void ReadWheelInputs() {
-            // TODO new input system
             _wheelsByFunction[WheelFunction.Brake].ForEach(wc => wc.Brake = Input.GetAxis("Brake") * wc.MaxBrake);
             _wheelsByFunction[WheelFunction.Steer].ForEach(wc => wc.SteerAngle = Input.GetAxis("Yaw") * wc.MaxSteerAngle);
             _wheelsByFunction[WheelFunction.Torque].ForEach(wc => wc.Torque = Mathf.InverseLerp(-1f, 1f, Input.GetAxis("WheelTorque")) * wc.MaxTorque);
         }
 
         private void ReadLightInputs() {
-            // TODO new input system
             if (Input.GetKeyDown(KeyCode.N)) _lightsByType[World.Lights.LightType.Nav].Toggle();
             if (Input.GetKeyDown(KeyCode.B)) _lightsByType[World.Lights.LightType.Beacon].Toggle();
             if (Input.GetKeyDown(KeyCode.V)) _lightsByType[World.Lights.LightType.Strobe].Toggle();
