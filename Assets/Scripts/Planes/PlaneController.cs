@@ -7,14 +7,27 @@ namespace Planes {
     [RequireComponent(typeof(Rigidbody), typeof(CGDrawer))]
     public class PlaneController : MonoBehaviour {
         [Header("Setup")]
+        [SerializeField] private List<ControlSurfaceController> _controlSurfaces = new();
         [SerializeField] private List<WheelController> _wheels = new();
         [SerializeField] private List<LightsController> _lights = new();
 
+        private Dictionary<ControlSurfaceType, List<ControlSurfaceController>> _controlSurfacesByType;
         private Dictionary<WheelFunction, List<WheelController>> _wheelsByFunction;
         private Dictionary<World.Lights.LightType, LightsController> _lightsByType;
 
+        private Camera _cam;
+
         private void Awake() {
+            _cam = Camera.main;
+            if (!_cam) Debug.LogWarning("PlaneController: no main camera found");
+
             // Init dictionaries
+            _controlSurfacesByType = new();
+            foreach (ControlSurfaceController cs in _controlSurfaces) {
+                if (!_controlSurfacesByType.ContainsKey(cs.Type)) _controlSurfacesByType.Add(cs.Type, new());
+                _controlSurfacesByType[cs.Type].Add(cs);
+            }
+
             _wheelsByFunction = new();
             foreach (WheelController wc in _wheels) {
                 foreach (WheelFunction wf in System.Enum.GetValues(typeof(WheelFunction))) {
@@ -36,8 +49,16 @@ namespace Planes {
         }
 
         private void ReadInputs() {
+            ReadControlSurfaceInputs();
             ReadWheelInputs();
             ReadLightInputs();
+            ReadCamInputs();
+        }
+
+        private void ReadControlSurfaceInputs() {
+            _controlSurfacesByType[ControlSurfaceType.Aileron].ForEach(cs => cs.AxisLerpDeflection(Input.GetAxis("Roll")));
+            _controlSurfacesByType[ControlSurfaceType.Elevator].ForEach(cs => cs.AxisLerpDeflection(Input.GetAxis("Pitch")));
+            _controlSurfacesByType[ControlSurfaceType.Rudder].ForEach(cs => cs.AxisLerpDeflection(Input.GetAxis("Yaw")));
         }
 
         private void ReadWheelInputs() {
@@ -52,6 +73,12 @@ namespace Planes {
             if (Input.GetKeyDown(KeyCode.V)) _lightsByType[World.Lights.LightType.Strobe].Toggle();
             if (Input.GetKeyDown(KeyCode.X)) _lightsByType[World.Lights.LightType.Taxi].Toggle();
             if (Input.GetKeyDown(KeyCode.C)) _lightsByType[World.Lights.LightType.Landing].Toggle();
+        }
+
+        private void ReadCamInputs() {
+            // TODO (maybe use camera gimbal setup)
+            _cam.transform.RotateAround(transform.position, transform.up, Input.GetAxis("CamHorizontal"));
+            _cam.transform.RotateAround(transform.position, transform.right, Input.GetAxis("CamVertical"));
         }
     }
 }

@@ -58,6 +58,7 @@ namespace Planes {
         }
 
         private void Update() {
+            // Sync model transform
             _wc.GetWorldPose(out _pos, out _rot);
             _wheelModel.SetPositionAndRotation(_pos, _rot);
         }
