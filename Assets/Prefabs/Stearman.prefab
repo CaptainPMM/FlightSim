@@ -26,14 +26,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1823688464}
-  m_LocalRotation: {x: 0.17364816, y: 0, z: 0, w: 0.9848078}
-  m_LocalPosition: {x: 0, y: 3.5, z: -9}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -8}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 7887468769942315969}
+  m_Father: {fileID: 787383522067967591}
   m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 20, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &1823688466
 Camera:
   m_ObjectHideFlags: 0
@@ -274,6 +274,7 @@ MonoBehaviour:
   _gizmoDeflectionLength: 1
   _gizmoDeflectionColor: {r: 1, g: 1, b: 1, a: 1}
   _gizmoSurfColor: {r: 1, g: 0, b: 0, a: 1}
+  _gizmoShowSurf: 1
   _deflection: 0
 --- !u!1 &169941547778159332
 GameObject:
@@ -1031,6 +1032,7 @@ MonoBehaviour:
   _gizmoDeflectionLength: 1
   _gizmoDeflectionColor: {r: 1, g: 1, b: 1, a: 1}
   _gizmoSurfColor: {r: 1, g: 0, b: 0, a: 1}
+  _gizmoShowSurf: 1
   _deflection: -0
 --- !u!1 &2619741556504769616
 GameObject:
@@ -1084,6 +1086,7 @@ MonoBehaviour:
   _gizmoDeflectionLength: 1
   _gizmoDeflectionColor: {r: 1, g: 1, b: 1, a: 1}
   _gizmoSurfColor: {r: 1, g: 0, b: 0, a: 1}
+  _gizmoShowSurf: 1
   _deflection: 0
 --- !u!1 &2823179487004335219
 GameObject:
@@ -1480,6 +1483,7 @@ MonoBehaviour:
   _gizmoDeflectionLength: 1.5
   _gizmoDeflectionColor: {r: 1, g: 1, b: 1, a: 1}
   _gizmoSurfColor: {r: 1, g: 0, b: 0, a: 1}
+  _gizmoShowSurf: 1
   _deflection: 0
 --- !u!1 &4304338148830234255
 GameObject:
@@ -1951,6 +1955,61 @@ MonoBehaviour:
   m_PointlightHDType: 0
   m_SpotLightShape: 0
   m_AreaLightShape: 0
+--- !u!1 &5252973311802665167
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 787383522067967591}
+  - component: {fileID: 3419962471710477089}
+  m_Layer: 0
+  m_Name: Camera Anchor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &787383522067967591
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5252973311802665167}
+  m_LocalRotation: {x: 0.19080901, y: 0, z: 0, w: 0.9816272}
+  m_LocalPosition: {x: 0, y: 0.65, z: -1.63}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children:
+  - {fileID: 1823688467}
+  m_Father: {fileID: 7887468769942315969}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3419962471710477089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5252973311802665167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71b334d7947334081aeaee2ccabba7b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _camAnchor: {fileID: 787383522067967591}
+  _cam: {fileID: 1823688466}
+  _startRot: {x: 22, y: 0}
+  _startDist: 8
+  _minDist: 0.1
+  _maxDist: 250
+  _movementSpeed: 3
+  _movementBounds: {x: 10, y: 3, z: 9}
+  _gizmoShowMovBounds: 1
+  _lockCam: 0
 --- !u!1 &5321770386507128787
 GameObject:
   m_ObjectHideFlags: 0
@@ -2954,7 +3013,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 1823688467}
+  - {fileID: 787383522067967591}
   - {fileID: 6157133153303261300}
   - {fileID: 3315842714038341238}
   - {fileID: 6736561646763270343}

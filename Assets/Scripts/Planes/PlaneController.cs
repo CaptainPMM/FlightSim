@@ -15,12 +15,7 @@ namespace Planes {
         private Dictionary<WheelFunction, List<WheelController>> _wheelsByFunction;
         private Dictionary<World.Lights.LightType, LightsController> _lightsByType;
 
-        private Camera _cam;
-
         private void Awake() {
-            _cam = Camera.main;
-            if (!_cam) Debug.LogWarning("PlaneController: no main camera found");
-
             // Init dictionaries
             _controlSurfacesByType = new();
             foreach (ControlSurfaceController cs in _controlSurfaces) {
@@ -52,7 +47,6 @@ namespace Planes {
             ReadControlSurfaceInputs();
             ReadWheelInputs();
             ReadLightInputs();
-            ReadCamInputs();
         }
 
         private void ReadControlSurfaceInputs() {
@@ -73,12 +67,6 @@ namespace Planes {
             if (Input.GetKeyDown(KeyCode.V)) _lightsByType[World.Lights.LightType.Strobe].Toggle();
             if (Input.GetKeyDown(KeyCode.X)) _lightsByType[World.Lights.LightType.Taxi].Toggle();
             if (Input.GetKeyDown(KeyCode.C)) _lightsByType[World.Lights.LightType.Landing].Toggle();
-        }
-
-        private void ReadCamInputs() {
-            // TODO (maybe use camera gimbal setup)
-            _cam.transform.RotateAround(transform.position, transform.up, Input.GetAxis("CamHorizontal"));
-            _cam.transform.RotateAround(transform.position, transform.right, Input.GetAxis("CamVertical"));
         }
     }
 }

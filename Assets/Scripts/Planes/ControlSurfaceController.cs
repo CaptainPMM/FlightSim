@@ -14,10 +14,13 @@ namespace Planes {
         public float MaxPosDeflection => _maxPosDeflection;
         public float MaxNegDeflection => _maxNegDeflection;
 
+#if UNITY_EDITOR
         [Header("Setup/Gizmos")]
         [SerializeField, Min(0f)] private float _gizmoDeflectionLength = 1f;
         [SerializeField] private Color _gizmoDeflectionColor = Color.white;
         [SerializeField] private Color _gizmoSurfColor = Color.red;
+        [SerializeField] private bool _gizmoShowSurf = true;
+#endif
 
         [Header("Runtime")]
         [SerializeField] private float _deflection = 0f;
@@ -77,7 +80,7 @@ namespace Planes {
                 Gizmos.DrawLine(transform.position, transform.position + Quaternion.AngleAxis((_invert ? -1 : 1) * (-_maxNegDeflection - _deflection), transform.right) * -transform.forward * _gizmoDeflectionLength);
             }
 
-            if (!_model) return;
+            if (!_model || !_gizmoShowSurf) return;
             Bounds bounds = _model.GetComponent<MeshRenderer>().bounds;
             Gizmos.color = _gizmoSurfColor;
             Gizmos.DrawWireCube(bounds.center, bounds.extents * 2f);

@@ -109,9 +109,9 @@ InputManager:
     positiveButton: 
     altNegativeButton: 
     altPositiveButton: 
-    gravity: 2
+    gravity: 0
     dead: 0
-    sensitivity: 2
+    sensitivity: 0.75
     snap: 1
     invert: 0
     type: 1
@@ -125,13 +125,29 @@ InputManager:
     positiveButton: 
     altNegativeButton: 
     altPositiveButton: 
-    gravity: 2
+    gravity: 0
     dead: 0
-    sensitivity: 2
+    sensitivity: 0.75
     snap: 1
     invert: 1
     type: 1
     axis: 1
+    joyNum: 0
+  - serializedVersion: 3
+    m_Name: CamDistance
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: 
+    altNegativeButton: 
+    altPositiveButton: 
+    gravity: 0
+    dead: 0
+    sensitivity: 0.8
+    snap: 1
+    invert: 0
+    type: 1
+    axis: 2
     joyNum: 0
   - serializedVersion: 3
     m_Name: Enable Debug Button 1
