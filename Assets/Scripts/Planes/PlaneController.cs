@@ -1,8 +1,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using World.Lights;
+using Utils;
 
 namespace Planes {
+    [RequireComponent(typeof(Rigidbody), typeof(CGDrawer))]
     public class PlaneController : MonoBehaviour {
         [Header("Setup")]
         [SerializeField] private List<WheelController> _wheels = new();
