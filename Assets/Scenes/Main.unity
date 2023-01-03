@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 7727.009, g: 7014.594, b: 7981.0947, a: 1}
+  m_IndirectSpecularColor: {r: 7727.1025, g: 7014.6494, b: 7981.017, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -432,7 +432,9 @@ MonoBehaviour:
   _dayDuration: 600
   _enableSunLightTime: 4.8
   _disableSunLightTime: 19.2
+  _dayDurModInputChange: 0.005
   <CurrTime>k__BackingField: 9
+  <DayDurationModifier>k__BackingField: 1
 --- !u!1 &432432459
 GameObject:
   m_ObjectHideFlags: 0
@@ -698,7 +700,9 @@ MonoBehaviour:
   _dayDuration: 600
   _enableSunLightTime: 5
   _disableSunLightTime: 19
+  _dayDurModInputChange: 0.001
   <CurrTime>k__BackingField: 11
+  <DayDurationModifier>k__BackingField: 1
 --- !u!114 &1103252248
 MonoBehaviour:
   m_ObjectHideFlags: 0
