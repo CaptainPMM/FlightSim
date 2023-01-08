@@ -560,31 +560,43 @@ MonoBehaviour:
   _forceOrigin: {fileID: 3188838016984426980}
   _idleRPM: 500
   _maxRPM: 2000
-  _rpmChangeRate: 150
-  _RPMThrustCurve:
+  _RPMChangeRate: 500
+  _propDiameter: 80
+  _propPitch: 5
+  _RPMThrustFactor:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
       value: 0
       inSlope: 0
-      outSlope: 0
-      tangentMode: 136
+      outSlope: 0.1
+      tangentMode: 69
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.25
+      value: 0.025
+      inSlope: 0.1
+      outSlope: 3.9666665
+      tangentMode: 69
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 1
-      value: 10
-      inSlope: 0
+      value: 3
+      inSlope: 3.9666665
       outSlope: 0
-      tangentMode: 136
+      tangentMode: 69
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  _gizmoThrustLength: 0.0015
   _RPM: 0
   _targetRPM: 0
 --- !u!1 &303418147976213617
@@ -962,9 +974,9 @@ WheelCollider:
   m_SuspensionDistance: 0.15
   m_ForceAppPointDistance: 0
   m_Mass: 38
-  m_WheelDampingRate: 3
+  m_WheelDampingRate: 2
   m_ForwardFriction:
-    m_ExtremumSlip: 0.4
+    m_ExtremumSlip: 1
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.8
     m_AsymptoteValue: 0.5
@@ -1001,6 +1013,8 @@ MonoBehaviour:
   _maxBrake: 100
   _maxSteerAngle: 0
   _maxTorque: 400
+  _attachedProp: {fileID: 2537430044097078191}
+  _startRollPropRPM: 525
   _brake: 0
   _steerAngle: 0
   _torque: 0
@@ -1466,9 +1480,9 @@ WheelCollider:
   m_SuspensionDistance: 0.03
   m_ForceAppPointDistance: 0
   m_Mass: 8
-  m_WheelDampingRate: 3
+  m_WheelDampingRate: 2
   m_ForwardFriction:
-    m_ExtremumSlip: 0.4
+    m_ExtremumSlip: 1
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.8
     m_AsymptoteValue: 0.5
@@ -1505,6 +1519,8 @@ MonoBehaviour:
   _maxBrake: 0
   _maxSteerAngle: 60
   _maxTorque: 0
+  _attachedProp: {fileID: 2537430044097078191}
+  _startRollPropRPM: 525
   _brake: 0
   _steerAngle: 0
   _torque: 0
@@ -3756,9 +3772,9 @@ WheelCollider:
   m_SuspensionDistance: 0.15
   m_ForceAppPointDistance: 0
   m_Mass: 38
-  m_WheelDampingRate: 3
+  m_WheelDampingRate: 2
   m_ForwardFriction:
-    m_ExtremumSlip: 0.4
+    m_ExtremumSlip: 1
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.8
     m_AsymptoteValue: 0.5
@@ -3795,6 +3811,8 @@ MonoBehaviour:
   _maxBrake: 100
   _maxSteerAngle: 0
   _maxTorque: 400
+  _attachedProp: {fileID: 2537430044097078191}
+  _startRollPropRPM: 525
   _brake: 0
   _steerAngle: 0
   _torque: 0

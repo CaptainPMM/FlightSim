@@ -9,6 +9,8 @@ namespace Planes {
         [SerializeField, Min(0f)] private float _maxBrake = 1f;
         [SerializeField, Range(0f, 90f)] private float _maxSteerAngle = 90f;
         [SerializeField, Min(0f)] private float _maxTorque = 50f;
+        [SerializeField] private PropController _attachedProp = null;
+        [SerializeField, Min(0)] private int _startRollPropRPM = 525;
 
         public WheelFunction WheelFunction => _wheelFunction;
         public float MaxBrake => _maxBrake;
@@ -51,6 +53,7 @@ namespace Planes {
         private void Awake() {
             _wc = GetComponent<WheelCollider>();
             if (!_wheelModel) Debug.LogWarning("WheelController: no wheel model assigned");
+            if (!_attachedProp) Debug.LogWarning("WheelController: no attached prop assigned");
         }
 
         private void Start() {
@@ -61,6 +64,9 @@ namespace Planes {
             // Sync model transform
             _wc.GetWorldPose(out _pos, out _rot);
             _wheelModel.SetPositionAndRotation(_pos, _rot);
+
+            // Hack to fix the wheel start roll stuck bug
+            if (_wc.isGrounded && _torque == 0f && _attachedProp.RPM >= _startRollPropRPM && _wc.rpm < 1f) Torque = 0.01f;
         }
 
         private void UpdateValues() {
