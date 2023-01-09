@@ -13,6 +13,9 @@ namespace Planes {
         [SerializeField, Min(0f), Tooltip("in inch")] private float _propPitch = 4f; // inches
         [SerializeField] private AnimationCurve _RPMThrustFactor = AnimationCurve.Linear(0f, 0f, 1f, 1f);
 
+        public int IdleRPM => _idleRPM;
+        public int MaxRPM => _maxRPM;
+
         [Header("Setup/Gizmos")]
         [SerializeField, Min(0f)] private float _gizmoThrustLength = 0.1f;
 

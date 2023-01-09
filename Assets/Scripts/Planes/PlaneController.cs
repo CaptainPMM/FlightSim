@@ -8,6 +8,7 @@ namespace Planes {
     public class PlaneController : MonoBehaviour {
         [Header("Setup")]
         [SerializeField] private List<ControlSurfaceController> _controlSurfaces = new();
+        [SerializeField] private List<PropController> _props = new();
         [SerializeField] private List<WheelController> _wheels = new();
         [SerializeField] private List<LightsController> _lights = new();
 
@@ -45,6 +46,7 @@ namespace Planes {
 
         private void ReadInputs() {
             ReadControlSurfaceInputs();
+            ReadPropInputs();
             ReadWheelInputs();
             ReadLightInputs();
         }
@@ -53,6 +55,19 @@ namespace Planes {
             _controlSurfacesByType[ControlSurfaceType.Aileron].ForEach(cs => cs.AxisLerpDeflection(Input.GetAxis("Roll")));
             _controlSurfacesByType[ControlSurfaceType.Elevator].ForEach(cs => cs.AxisLerpDeflection(Input.GetAxis("Pitch")));
             _controlSurfacesByType[ControlSurfaceType.Rudder].ForEach(cs => cs.AxisLerpDeflection(Input.GetAxis("Yaw")));
+        }
+
+        private void ReadPropInputs() {
+            if (Input.GetKeyDown(KeyCode.P)) {
+                _props.ForEach(p => {
+                    if (p.EngineOn) p.StopEngine();
+                    else p.StartEngine();
+                });
+            } else {
+                _props.ForEach(p => {
+                    if (p.EngineOn) p.TargetRPM += (int)(Input.GetAxis("Thrust") * p.MaxRPM);
+                });
+            }
         }
 
         private void ReadWheelInputs() {
