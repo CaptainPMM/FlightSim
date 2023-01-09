@@ -1010,7 +1010,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _wheelModel: {fileID: 5807704944199135584}
   _wheelFunction: 5
-  _maxBrake: 100
+  _maxBrake: 200
   _maxSteerAngle: 0
   _maxTorque: 400
   _attachedProp: {fileID: 2537430044097078191}
@@ -3808,7 +3808,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _wheelModel: {fileID: 5187701615543328815}
   _wheelFunction: 5
-  _maxBrake: 100
+  _maxBrake: 200
   _maxSteerAngle: 0
   _maxTorque: 400
   _attachedProp: {fileID: 2537430044097078191}
