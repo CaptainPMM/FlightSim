@@ -12,11 +12,19 @@ namespace Planes {
         [SerializeField] private List<WheelController> _wheels = new();
         [SerializeField] private List<LightsController> _lights = new();
 
+        public float IAS => _rb.velocity.magnitude * 1.94384f; // m/s to knots conversion
+        public float ALT => transform.position.y * 3.28084f; // m to feet conversion
+        public float VS => _rb.velocity.y * 1.94384f; // m/s to knots conversion
+
+        private Rigidbody _rb;
+
         private Dictionary<ControlSurfaceType, List<ControlSurfaceController>> _controlSurfacesByType;
         private Dictionary<WheelFunction, List<WheelController>> _wheelsByFunction;
         private Dictionary<World.Lights.LightType, LightsController> _lightsByType;
 
         private void Awake() {
+            _rb = GetComponent<Rigidbody>();
+
             // Init dictionaries
             _controlSurfacesByType = new();
             foreach (ControlSurfaceController cs in _controlSurfaces) {
@@ -82,6 +90,10 @@ namespace Planes {
             if (Input.GetKeyDown(KeyCode.V)) _lightsByType[World.Lights.LightType.Strobe].Toggle();
             if (Input.GetKeyDown(KeyCode.X)) _lightsByType[World.Lights.LightType.Taxi].Toggle();
             if (Input.GetKeyDown(KeyCode.C)) _lightsByType[World.Lights.LightType.Landing].Toggle();
+        }
+
+        public PropController GetProp(int propIndex) {
+            return _props[propIndex];
         }
     }
 }

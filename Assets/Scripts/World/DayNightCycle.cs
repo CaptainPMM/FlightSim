@@ -55,6 +55,18 @@ namespace World {
             transform.Rotate(0f, 360f * Mathf.InverseLerp(0f, 24f, CurrTime) + 180f, 0f, Space.Self);
         }
 
+        public string GetTimeAsString() {
+            string timeString = "";
+
+            float hour = Mathf.FloorToInt(CurrTime);
+            float minute = CurrTime - hour;
+
+            timeString += hour.ToString("00") + ":";
+            timeString += (Mathf.InverseLerp(0f, 1f, minute) * 60f).ToString("00");
+
+            return timeString;
+        }
+
 #if UNITY_EDITOR
         private void OnValidate() {
             if (!Application.isPlaying) Setup();
