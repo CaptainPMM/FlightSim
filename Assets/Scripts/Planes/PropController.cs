@@ -16,8 +16,10 @@ namespace Planes {
         public int IdleRPM => _idleRPM;
         public int MaxRPM => _maxRPM;
 
+#if UNITY_EDITOR
         [Header("Setup/Gizmos")]
         [SerializeField, Min(0f)] private float _gizmoThrustLength = 0.1f;
+#endif
 
         [Header("Runtime")]
         [SerializeField, Min(0f)] private float _RPM = 0f;
