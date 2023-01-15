@@ -4,7 +4,7 @@ using World.Lights;
 using Utils;
 
 namespace Planes {
-    [RequireComponent(typeof(Rigidbody), typeof(CGDrawer))]
+    [RequireComponent(typeof(Rigidbody), typeof(CGDrawer), typeof(CLDrawer))]
     public class PlaneController : MonoBehaviour {
         [Header("Setup")]
         [SerializeField] private List<ControlSurfaceController> _controlSurfaces = new();

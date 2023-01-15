@@ -6,7 +6,7 @@ namespace Utils {
         [SerializeField, Min(0f)] private float radius = 0.1f;
 
         private void OnDrawGizmosSelected() {
-            Gizmos.color = Color.red;
+            Gizmos.color = Color.magenta;
             Gizmos.DrawSphere(GetComponent<Rigidbody>().worldCenterOfMass, radius);
         }
     }

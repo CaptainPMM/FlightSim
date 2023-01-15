@@ -18,7 +18,7 @@ namespace Planes {
         [Header("Setup/Gizmos")]
         [SerializeField, Min(0f)] private float _gizmoDeflectionLength = 1f;
         [SerializeField] private Color _gizmoDeflectionColor = Color.white;
-        [SerializeField] private Color _gizmoSurfColor = Color.red;
+        [SerializeField] private Color _gizmoSurfColor = Color.white;
         [SerializeField] private bool _gizmoShowSurf = true;
 #endif
 
