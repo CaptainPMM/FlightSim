@@ -26,7 +26,7 @@ namespace Utils {
             }
             _cl = _totalLiftVector / _totalLift;
 
-            Gizmos.color = Color.cyan;
+            Gizmos.color = Color.blue;
             Gizmos.DrawSphere(_cl, radius);
         }
     }

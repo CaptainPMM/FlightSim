@@ -271,8 +271,8 @@ MonoBehaviour:
   _model: {fileID: 6217683068987263926}
   _type: 0
   _invert: 1
-  _maxPosDeflection: 30
-  _maxNegDeflection: 30
+  _maxPosDeflection: 35
+  _maxNegDeflection: 35
   _gizmoDeflectionLength: 1
   _gizmoDeflectionColor: {r: 1, g: 1, b: 1, a: 1}
   _gizmoSurfColor: {r: 1, g: 1, b: 1, a: 1}
@@ -581,15 +581,15 @@ MonoBehaviour:
       time: 0.25
       value: 0.025
       inSlope: 0.1
-      outSlope: 3.9666665
+      outSlope: 6.633333
       tangentMode: 69
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 1
-      value: 3
-      inSlope: 3.9666665
+      value: 5
+      inSlope: 6.633333
       outSlope: 0
       tangentMode: 69
       weightedMode: 0
@@ -598,7 +598,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  _gizmoThrustLength: 0.0015
+  _gizmoThrustLength: 0.001
   _RPM: 0
   _targetRPM: 0
 --- !u!1 &303418147976213617
@@ -719,20 +719,20 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: -0.5
-      inSlope: 0.0867435
-      outSlope: 0.0867435
+      inSlope: 0.07878987
+      outSlope: 0.07878987
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
+      inWeight: 0.103846155
       outWeight: 0.82051283
     - serializedVersion: 3
       time: 3
       value: 0.1
-      inSlope: 0.15177262
-      outSlope: 0.15177262
+      inSlope: 0.20124233
+      outSlope: 0.20124233
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.43589744
+      inWeight: 0.33333334
       outWeight: 0.1474359
     - serializedVersion: 3
       time: 15
@@ -755,6 +755,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  _controlSurface: {fileID: 0}
   _gizmoLocationSize: 0.15
   _gizmoShowWingArea: 1
   _gizmoWingAreaOffset: {x: 0, y: 0, z: -0.08}
@@ -762,7 +763,7 @@ MonoBehaviour:
   _gizmoShowExtendedChordLine: 0
   _gizmoExtendedChordLineLength: 2
   _gizmoAOALength: 1.5
-  _gizmoLiftLength: 0.025
+  _gizmoLiftLength: 0.002
 --- !u!1 &641305417646492190
 GameObject:
   m_ObjectHideFlags: 0
@@ -1098,20 +1099,20 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: -0.5
-      inSlope: 0.0867435
-      outSlope: 0.0867435
+      inSlope: 0.07878987
+      outSlope: 0.07878987
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
+      inWeight: 0.103846155
       outWeight: 0.82051283
     - serializedVersion: 3
       time: 3
       value: 0.1
-      inSlope: 0.15177262
-      outSlope: 0.15177262
+      inSlope: 0.20124233
+      outSlope: 0.20124233
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.43589744
+      inWeight: 0.33333334
       outWeight: 0.1474359
     - serializedVersion: 3
       time: 15
@@ -1134,6 +1135,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  _controlSurface: {fileID: 0}
   _gizmoLocationSize: 0.15
   _gizmoShowWingArea: 1
   _gizmoWingAreaOffset: {x: 0, y: 0, z: -0.3}
@@ -1141,7 +1143,7 @@ MonoBehaviour:
   _gizmoShowExtendedChordLine: 0
   _gizmoExtendedChordLineLength: 2
   _gizmoAOALength: 1.5
-  _gizmoLiftLength: 0.025
+  _gizmoLiftLength: 0.002
 --- !u!1 &1086994790472018899
 GameObject:
   m_ObjectHideFlags: 0
@@ -1228,7 +1230,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _wheelModel: {fileID: 5807704944199135584}
   _wheelFunction: 5
-  _maxBrake: 200
+  _maxBrake: 300
   _maxSteerAngle: 0
   _maxTorque: 400
   _attachedProp: {fileID: 2537430044097078191}
@@ -1284,31 +1286,41 @@ MonoBehaviour:
   _airDensity: 1.225
   _wingAreaX: 1.5
   _wingAreaZ: 0.8
-  _baseLift: 2000
+  _baseLift: 4000
   _AOALiftFactor:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: -90
       value: -1
-      inSlope: 0.011111111
-      outSlope: 0.011111111
-      tangentMode: 34
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0
       outWeight: 0.33333334
     - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0.034140132
+      outSlope: 0.034140132
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.06153846
+    - serializedVersion: 3
       time: 90
       value: 1
-      inSlope: 0.011111111
-      outSlope: 0.011111111
-      tangentMode: 34
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  _controlSurface: {fileID: 6890574909389044687}
   _gizmoLocationSize: 0.15
   _gizmoShowWingArea: 1
   _gizmoWingAreaOffset: {x: 0, y: 0, z: 0}
@@ -1316,7 +1328,7 @@ MonoBehaviour:
   _gizmoShowExtendedChordLine: 0
   _gizmoExtendedChordLineLength: 2
   _gizmoAOALength: 1.5
-  _gizmoLiftLength: 0.025
+  _gizmoLiftLength: 0.004
 --- !u!1 &1208277301020939042
 GameObject:
   m_ObjectHideFlags: 0
@@ -1365,31 +1377,41 @@ MonoBehaviour:
   _airDensity: 1.225
   _wingAreaX: 1.75
   _wingAreaZ: 0.45
-  _baseLift: 1000
+  _baseLift: 16000
   _AOALiftFactor:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: -90
       value: -1
-      inSlope: 0.011111111
-      outSlope: 0.011111111
-      tangentMode: 34
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0
       outWeight: 0.33333334
     - serializedVersion: 3
+      time: 3
+      value: 0.1
+      inSlope: 0.03269294
+      outSlope: 0.03269294
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.04342432
+      outWeight: 0.06498674
+    - serializedVersion: 3
       time: 90
       value: 1
-      inSlope: 0.011111111
-      outSlope: 0.011111111
-      tangentMode: 34
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  _controlSurface: {fileID: 2998871490309429121}
   _gizmoLocationSize: 0.15
   _gizmoShowWingArea: 1
   _gizmoWingAreaOffset: {x: 0, y: 0, z: -0.03}
@@ -1397,7 +1419,7 @@ MonoBehaviour:
   _gizmoShowExtendedChordLine: 0
   _gizmoExtendedChordLineLength: 2
   _gizmoAOALength: 1.5
-  _gizmoLiftLength: 0.025
+  _gizmoLiftLength: 0.002
 --- !u!1 &1454496972986451820
 GameObject:
   m_ObjectHideFlags: 0
@@ -1500,8 +1522,8 @@ MonoBehaviour:
   _model: {fileID: 4242275496905009844}
   _type: 0
   _invert: 0
-  _maxPosDeflection: 30
-  _maxNegDeflection: 30
+  _maxPosDeflection: 35
+  _maxNegDeflection: 35
   _gizmoDeflectionLength: 1
   _gizmoDeflectionColor: {r: 1, g: 1, b: 1, a: 1}
   _gizmoSurfColor: {r: 1, g: 1, b: 1, a: 1}
@@ -1900,7 +1922,7 @@ WheelCollider:
   m_Center: {x: 0, y: 0.015, z: 0}
   m_Radius: 0.117
   m_SuspensionSpring:
-    spring: 60000
+    spring: 35000
     damper: 4000
     targetPosition: 0.5
   m_SuspensionDistance: 0.03
@@ -1998,31 +2020,41 @@ MonoBehaviour:
   _airDensity: 1.225
   _wingAreaX: 1.25
   _wingAreaZ: 0.45
-  _baseLift: 1000
+  _baseLift: 16000
   _AOALiftFactor:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: -90
       value: -1
-      inSlope: 0.011111111
-      outSlope: 0.011111111
-      tangentMode: 34
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0
       outWeight: 0.33333334
     - serializedVersion: 3
+      time: 3
+      value: 0.1
+      inSlope: 0.03269294
+      outSlope: 0.03269294
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.04342432
+      outWeight: 0.06498674
+    - serializedVersion: 3
       time: 90
       value: 1
-      inSlope: 0.011111111
-      outSlope: 0.011111111
-      tangentMode: 34
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  _controlSurface: {fileID: 2505110321479937910}
   _gizmoLocationSize: 0.15
   _gizmoShowWingArea: 1
   _gizmoWingAreaOffset: {x: 0, y: 0, z: -0.03}
@@ -2030,7 +2062,7 @@ MonoBehaviour:
   _gizmoShowExtendedChordLine: 0
   _gizmoExtendedChordLineLength: 2
   _gizmoAOALength: 1.5
-  _gizmoLiftLength: 0.025
+  _gizmoLiftLength: 0.002
 --- !u!1 &3528595041162537936
 GameObject:
   m_ObjectHideFlags: 0
@@ -2079,31 +2111,41 @@ MonoBehaviour:
   _airDensity: 1.225
   _wingAreaX: 1.65
   _wingAreaZ: 0.45
-  _baseLift: 1000
+  _baseLift: 4000
   _AOALiftFactor:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: -90
       value: -1
-      inSlope: 0.011111111
-      outSlope: 0.011111111
-      tangentMode: 34
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0
       outWeight: 0.33333334
     - serializedVersion: 3
+      time: 0
+      value: -0.1
+      inSlope: 0.031509776
+      outSlope: 0.031509776
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.06153846
+      outWeight: 0.05769231
+    - serializedVersion: 3
       time: 90
       value: 1
-      inSlope: 0.011111111
-      outSlope: 0.011111111
-      tangentMode: 34
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  _controlSurface: {fileID: 718389934953915652}
   _gizmoLocationSize: 0.15
   _gizmoShowWingArea: 1
   _gizmoWingAreaOffset: {x: 0, y: 0, z: 0}
@@ -2111,7 +2153,7 @@ MonoBehaviour:
   _gizmoShowExtendedChordLine: 0
   _gizmoExtendedChordLineLength: 2
   _gizmoAOALength: 1.5
-  _gizmoLiftLength: 0.025
+  _gizmoLiftLength: 0.006
 --- !u!1 &3660617917773681638
 GameObject:
   m_ObjectHideFlags: 0
@@ -2160,31 +2202,41 @@ MonoBehaviour:
   _airDensity: 1.225
   _wingAreaX: 1.6
   _wingAreaZ: 0.8
-  _baseLift: 2000
+  _baseLift: 4000
   _AOALiftFactor:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: -90
       value: -1
-      inSlope: 0.011111111
-      outSlope: 0.011111111
-      tangentMode: 34
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0
       outWeight: 0.33333334
     - serializedVersion: 3
+      time: 0
+      value: -0.1
+      inSlope: 0.031509776
+      outSlope: 0.031509776
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.06153846
+      outWeight: 0.05769231
+    - serializedVersion: 3
       time: 90
       value: 1
-      inSlope: 0.011111111
-      outSlope: 0.011111111
-      tangentMode: 34
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  _controlSurface: {fileID: 0}
   _gizmoLocationSize: 0.15
   _gizmoShowWingArea: 1
   _gizmoWingAreaOffset: {x: 0, y: 0, z: 0.12}
@@ -2192,7 +2244,7 @@ MonoBehaviour:
   _gizmoShowExtendedChordLine: 0
   _gizmoExtendedChordLineLength: 2
   _gizmoAOALength: 1.5
-  _gizmoLiftLength: 0.025
+  _gizmoLiftLength: 0.006
 --- !u!1 &3691828928662087774
 GameObject:
   m_ObjectHideFlags: 0
@@ -2257,20 +2309,20 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: -0.5
-      inSlope: 0.0867435
-      outSlope: 0.0867435
+      inSlope: 0.07878987
+      outSlope: 0.07878987
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
+      inWeight: 0.103846155
       outWeight: 0.82051283
     - serializedVersion: 3
       time: 3
       value: 0.1
-      inSlope: 0.15177262
-      outSlope: 0.15177262
+      inSlope: 0.20124233
+      outSlope: 0.20124233
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.43589744
+      inWeight: 0.33333334
       outWeight: 0.1474359
     - serializedVersion: 3
       time: 15
@@ -2293,6 +2345,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  _controlSurface: {fileID: 0}
   _gizmoLocationSize: 0.15
   _gizmoShowWingArea: 1
   _gizmoWingAreaOffset: {x: 0, y: 0, z: -0.3}
@@ -2300,7 +2353,7 @@ MonoBehaviour:
   _gizmoShowExtendedChordLine: 0
   _gizmoExtendedChordLineLength: 2
   _gizmoAOALength: 1.5
-  _gizmoLiftLength: 0.025
+  _gizmoLiftLength: 0.002
 --- !u!1 &3894365827875766569
 GameObject:
   m_ObjectHideFlags: 0
@@ -2349,31 +2402,41 @@ MonoBehaviour:
   _airDensity: 1.225
   _wingAreaX: 1.75
   _wingAreaZ: 0.45
-  _baseLift: 1000
+  _baseLift: 16000
   _AOALiftFactor:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: -90
       value: -1
-      inSlope: 0.011111111
-      outSlope: 0.011111111
-      tangentMode: 34
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0
       outWeight: 0.33333334
     - serializedVersion: 3
+      time: 3
+      value: 0.1
+      inSlope: 0.03269294
+      outSlope: 0.03269294
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.04342432
+      outWeight: 0.06498674
+    - serializedVersion: 3
       time: 90
       value: 1
-      inSlope: 0.011111111
-      outSlope: 0.011111111
-      tangentMode: 34
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  _controlSurface: {fileID: 2505110321479937910}
   _gizmoLocationSize: 0.15
   _gizmoShowWingArea: 1
   _gizmoWingAreaOffset: {x: 0, y: 0, z: -0.03}
@@ -2381,7 +2444,7 @@ MonoBehaviour:
   _gizmoShowExtendedChordLine: 0
   _gizmoExtendedChordLineLength: 2
   _gizmoAOALength: 1.5
-  _gizmoLiftLength: 0.025
+  _gizmoLiftLength: 0.002
 --- !u!1 &3894702758748113284
 GameObject:
   m_ObjectHideFlags: 0
@@ -2431,8 +2494,8 @@ MonoBehaviour:
   _model: {fileID: 396489214508456741}
   _type: 1
   _invert: 0
-  _maxPosDeflection: 30
-  _maxNegDeflection: 30
+  _maxPosDeflection: 40
+  _maxNegDeflection: 40
   _gizmoDeflectionLength: 1.5
   _gizmoDeflectionColor: {r: 1, g: 1, b: 1, a: 1}
   _gizmoSurfColor: {r: 1, g: 1, b: 1, a: 1}
@@ -2987,7 +3050,7 @@ MonoBehaviour:
   _airDensity: 1.225
   _wingAreaX: 2
   _wingAreaZ: 0.9
-  _baseLift: 2000
+  _baseLift: 1000
   _AOALiftFactor:
     serializedVersion: 2
     m_Curve:
@@ -3003,20 +3066,20 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: -0.5
-      inSlope: 0.0867435
-      outSlope: 0.0867435
+      inSlope: 0.07878987
+      outSlope: 0.07878987
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
+      inWeight: 0.103846155
       outWeight: 0.82051283
     - serializedVersion: 3
       time: 3
       value: 0.1
-      inSlope: 0.15177262
-      outSlope: 0.15177262
+      inSlope: 0.20124233
+      outSlope: 0.20124233
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.43589744
+      inWeight: 0.33333334
       outWeight: 0.1474359
     - serializedVersion: 3
       time: 15
@@ -3039,6 +3102,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  _controlSurface: {fileID: 0}
   _gizmoLocationSize: 0.15
   _gizmoShowWingArea: 1
   _gizmoWingAreaOffset: {x: 0, y: 0, z: -0.12}
@@ -3046,7 +3110,7 @@ MonoBehaviour:
   _gizmoShowExtendedChordLine: 0
   _gizmoExtendedChordLineLength: 2
   _gizmoAOALength: 1.5
-  _gizmoLiftLength: 0.025
+  _gizmoLiftLength: 0.002
 --- !u!1 &5231011832975403837
 GameObject:
   m_ObjectHideFlags: 0
@@ -3095,31 +3159,41 @@ MonoBehaviour:
   _airDensity: 1.225
   _wingAreaX: 1.25
   _wingAreaZ: 0.45
-  _baseLift: 1000
+  _baseLift: 16000
   _AOALiftFactor:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: -90
       value: -1
-      inSlope: 0.011111111
-      outSlope: 0.011111111
-      tangentMode: 34
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0
       outWeight: 0.33333334
     - serializedVersion: 3
+      time: 3
+      value: 0.1
+      inSlope: 0.03269294
+      outSlope: 0.03269294
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.04342432
+      outWeight: 0.06498674
+    - serializedVersion: 3
       time: 90
       value: 1
-      inSlope: 0.011111111
-      outSlope: 0.011111111
-      tangentMode: 34
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  _controlSurface: {fileID: 2998871490309429121}
   _gizmoLocationSize: 0.15
   _gizmoShowWingArea: 1
   _gizmoWingAreaOffset: {x: 0, y: 0, z: -0.03}
@@ -3127,7 +3201,7 @@ MonoBehaviour:
   _gizmoShowExtendedChordLine: 0
   _gizmoExtendedChordLineLength: 2
   _gizmoAOALength: 1.5
-  _gizmoLiftLength: 0.025
+  _gizmoLiftLength: 0.002
 --- !u!1 &5232057065704240846
 GameObject:
   m_ObjectHideFlags: 0
@@ -3176,31 +3250,41 @@ MonoBehaviour:
   _airDensity: 1.225
   _wingAreaX: 1.65
   _wingAreaZ: 0.45
-  _baseLift: 1000
+  _baseLift: 4000
   _AOALiftFactor:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: -90
       value: -1
-      inSlope: 0.011111111
-      outSlope: 0.011111111
-      tangentMode: 34
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0
       outWeight: 0.33333334
     - serializedVersion: 3
+      time: 0
+      value: -0.1
+      inSlope: 0.031509776
+      outSlope: 0.031509776
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.06153846
+      outWeight: 0.05769231
+    - serializedVersion: 3
       time: 90
       value: 1
-      inSlope: 0.011111111
-      outSlope: 0.011111111
-      tangentMode: 34
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  _controlSurface: {fileID: 718389934953915652}
   _gizmoLocationSize: 0.15
   _gizmoShowWingArea: 1
   _gizmoWingAreaOffset: {x: 0, y: 0, z: 0}
@@ -3208,7 +3292,7 @@ MonoBehaviour:
   _gizmoShowExtendedChordLine: 0
   _gizmoExtendedChordLineLength: 2
   _gizmoAOALength: 1.5
-  _gizmoLiftLength: 0.025
+  _gizmoLiftLength: 0.006
 --- !u!1 &5252973311802665167
 GameObject:
   m_ObjectHideFlags: 0
@@ -3364,31 +3448,41 @@ MonoBehaviour:
   _airDensity: 1.225
   _wingAreaX: 0.55
   _wingAreaZ: 0.55
-  _baseLift: 2000
+  _baseLift: 4000
   _AOALiftFactor:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: -90
       value: -1
-      inSlope: 0.011111111
-      outSlope: 0.011111111
-      tangentMode: 34
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0
       outWeight: 0.33333334
     - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0.034140132
+      outSlope: 0.034140132
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.06153846
+    - serializedVersion: 3
       time: 90
       value: 1
-      inSlope: 0.011111111
-      outSlope: 0.011111111
-      tangentMode: 34
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  _controlSurface: {fileID: 0}
   _gizmoLocationSize: 0.15
   _gizmoShowWingArea: 1
   _gizmoWingAreaOffset: {x: 0, y: 0, z: 0}
@@ -3396,7 +3490,7 @@ MonoBehaviour:
   _gizmoShowExtendedChordLine: 0
   _gizmoExtendedChordLineLength: 2
   _gizmoAOALength: 1.5
-  _gizmoLiftLength: 0.025
+  _gizmoLiftLength: 0.004
 --- !u!1 &5732579136453130230
 GameObject:
   m_ObjectHideFlags: 0
@@ -3461,20 +3555,20 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: -0.5
-      inSlope: 0.0867435
-      outSlope: 0.0867435
+      inSlope: 0.07878987
+      outSlope: 0.07878987
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
+      inWeight: 0.103846155
       outWeight: 0.82051283
     - serializedVersion: 3
       time: 3
       value: 0.1
-      inSlope: 0.15177262
-      outSlope: 0.15177262
+      inSlope: 0.20124233
+      outSlope: 0.20124233
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.43589744
+      inWeight: 0.33333334
       outWeight: 0.1474359
     - serializedVersion: 3
       time: 15
@@ -3497,6 +3591,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  _controlSurface: {fileID: 0}
   _gizmoLocationSize: 0.15
   _gizmoShowWingArea: 1
   _gizmoWingAreaOffset: {x: 0, y: 0, z: -0.08}
@@ -3504,7 +3599,7 @@ MonoBehaviour:
   _gizmoShowExtendedChordLine: 0
   _gizmoExtendedChordLineLength: 2
   _gizmoAOALength: 1.5
-  _gizmoLiftLength: 0.025
+  _gizmoLiftLength: 0.002
 --- !u!1 &5758062252125373389
 GameObject:
   m_ObjectHideFlags: 0
@@ -4272,20 +4367,20 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: -0.5
-      inSlope: 0.0867435
-      outSlope: 0.0867435
+      inSlope: 0.07878987
+      outSlope: 0.07878987
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
+      inWeight: 0.103846155
       outWeight: 0.82051283
     - serializedVersion: 3
       time: 3
       value: 0.1
-      inSlope: 0.15177262
-      outSlope: 0.15177262
+      inSlope: 0.20124233
+      outSlope: 0.20124233
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.43589744
+      inWeight: 0.33333334
       outWeight: 0.1474359
     - serializedVersion: 3
       time: 15
@@ -4308,6 +4403,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  _controlSurface: {fileID: 0}
   _gizmoLocationSize: 0.15
   _gizmoShowWingArea: 1
   _gizmoWingAreaOffset: {x: 0, y: 0, z: -0.3}
@@ -4315,7 +4411,7 @@ MonoBehaviour:
   _gizmoShowExtendedChordLine: 0
   _gizmoExtendedChordLineLength: 2
   _gizmoAOALength: 1.5
-  _gizmoLiftLength: 0.025
+  _gizmoLiftLength: 0.002
 --- !u!1 &6737639978307041832
 GameObject:
   m_ObjectHideFlags: 0
@@ -4614,7 +4710,7 @@ Rigidbody:
   m_GameObject: {fileID: 6829262450420826059}
   serializedVersion: 4
   m_Mass: 980
-  m_Drag: 0.05
+  m_Drag: 0.0375
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: -0.2}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -5230,20 +5326,20 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: -0.5
-      inSlope: 0.0867435
-      outSlope: 0.0867435
+      inSlope: 0.07878987
+      outSlope: 0.07878987
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
+      inWeight: 0.103846155
       outWeight: 0.82051283
     - serializedVersion: 3
       time: 3
       value: 0.1
-      inSlope: 0.15177262
-      outSlope: 0.15177262
+      inSlope: 0.20124233
+      outSlope: 0.20124233
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.43589744
+      inWeight: 0.33333334
       outWeight: 0.1474359
     - serializedVersion: 3
       time: 15
@@ -5266,6 +5362,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  _controlSurface: {fileID: 0}
   _gizmoLocationSize: 0.15
   _gizmoShowWingArea: 1
   _gizmoWingAreaOffset: {x: 0, y: 0, z: -0.08}
@@ -5273,7 +5370,7 @@ MonoBehaviour:
   _gizmoShowExtendedChordLine: 0
   _gizmoExtendedChordLineLength: 2
   _gizmoAOALength: 1.5
-  _gizmoLiftLength: 0.025
+  _gizmoLiftLength: 0.002
 --- !u!1 &8076999909833235455
 GameObject:
   m_ObjectHideFlags: 0
@@ -5360,7 +5457,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _wheelModel: {fileID: 5187701615543328815}
   _wheelFunction: 5
-  _maxBrake: 200
+  _maxBrake: 300
   _maxSteerAngle: 0
   _maxTorque: 400
   _attachedProp: {fileID: 2537430044097078191}
@@ -5432,20 +5529,20 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: -0.5
-      inSlope: 0.0867435
-      outSlope: 0.0867435
+      inSlope: 0.07878987
+      outSlope: 0.07878987
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
+      inWeight: 0.103846155
       outWeight: 0.82051283
     - serializedVersion: 3
       time: 3
       value: 0.1
-      inSlope: 0.15177262
-      outSlope: 0.15177262
+      inSlope: 0.20124233
+      outSlope: 0.20124233
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.43589744
+      inWeight: 0.33333334
       outWeight: 0.1474359
     - serializedVersion: 3
       time: 15
@@ -5468,6 +5565,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  _controlSurface: {fileID: 0}
   _gizmoLocationSize: 0.15
   _gizmoShowWingArea: 1
   _gizmoWingAreaOffset: {x: 0, y: 0, z: -0.3}
@@ -5475,7 +5573,7 @@ MonoBehaviour:
   _gizmoShowExtendedChordLine: 0
   _gizmoExtendedChordLineLength: 2
   _gizmoAOALength: 1.5
-  _gizmoLiftLength: 0.025
+  _gizmoLiftLength: 0.002
 --- !u!1 &8740157452889580374
 GameObject:
   m_ObjectHideFlags: 0
@@ -5540,20 +5638,20 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: -0.5
-      inSlope: 0.0867435
-      outSlope: 0.0867435
+      inSlope: 0.07878987
+      outSlope: 0.07878987
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
+      inWeight: 0.103846155
       outWeight: 0.82051283
     - serializedVersion: 3
       time: 3
       value: 0.1
-      inSlope: 0.15177262
-      outSlope: 0.15177262
+      inSlope: 0.20124233
+      outSlope: 0.20124233
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.43589744
+      inWeight: 0.33333334
       outWeight: 0.1474359
     - serializedVersion: 3
       time: 15
@@ -5576,6 +5674,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  _controlSurface: {fileID: 0}
   _gizmoLocationSize: 0.15
   _gizmoShowWingArea: 1
   _gizmoWingAreaOffset: {x: 0, y: 0, z: -0.08}
@@ -5583,7 +5682,7 @@ MonoBehaviour:
   _gizmoShowExtendedChordLine: 0
   _gizmoExtendedChordLineLength: 2
   _gizmoAOALength: 1.5
-  _gizmoLiftLength: 0.025
+  _gizmoLiftLength: 0.002
 --- !u!1 &9150415530928011647
 GameObject:
   m_ObjectHideFlags: 0
@@ -5632,31 +5731,41 @@ MonoBehaviour:
   _airDensity: 1.225
   _wingAreaX: 1.6
   _wingAreaZ: 0.8
-  _baseLift: 2000
+  _baseLift: 4000
   _AOALiftFactor:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: -90
       value: -1
-      inSlope: 0.011111111
-      outSlope: 0.011111111
-      tangentMode: 34
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0
       outWeight: 0.33333334
     - serializedVersion: 3
+      time: 0
+      value: -0.1
+      inSlope: 0.031509776
+      outSlope: 0.031509776
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.06153846
+      outWeight: 0.05769231
+    - serializedVersion: 3
       time: 90
       value: 1
-      inSlope: 0.011111111
-      outSlope: 0.011111111
-      tangentMode: 34
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  _controlSurface: {fileID: 0}
   _gizmoLocationSize: 0.15
   _gizmoShowWingArea: 1
   _gizmoWingAreaOffset: {x: 0, y: 0, z: 0.12}
@@ -5664,7 +5773,7 @@ MonoBehaviour:
   _gizmoShowExtendedChordLine: 0
   _gizmoExtendedChordLineLength: 2
   _gizmoAOALength: 1.5
-  _gizmoLiftLength: 0.025
+  _gizmoLiftLength: 0.006
 --- !u!1001 &5978597252121663391
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -26,7 +26,7 @@ namespace Planes {
         [SerializeField] private float _deflection = 0f;
 
         public float Deflection {
-            get => _deflection;
+            get => _invert ? -_deflection : _deflection;
             set {
                 _deflection = Mathf.Clamp(value, -_maxNegDeflection, _maxPosDeflection);
                 if (_type == ControlSurfaceType.Rudder) transform.localRotation = Quaternion.Euler(0f, _invert ? -_deflection : _deflection, 0f);
@@ -36,6 +36,8 @@ namespace Planes {
                 _model.SetPositionAndRotation(transform.position, transform.rotation);
             }
         }
+
+        public float RawDeflection => _deflection; // Without invert effect
 
         private void Awake() {
             if (!_model) Debug.LogWarning("ControlSurfaceController: no model assigned");

@@ -11,6 +11,7 @@ namespace Planes.Aerodynamics {
         [SerializeField, Min(0f)] private float _wingAreaZ = 1f; // m -> X * Z => [s] in m^2
         [SerializeField] private float _baseLift = 1f; // newtons
         [SerializeField] private AnimationCurve _AOALiftFactor = AnimationCurve.Linear(-20f, 0f, 20f, 0f); // base lift * f(AOA) = [CL] lift coefficient
+        [SerializeField] private ControlSurfaceController _controlSurface = null; // Leave null for static effectors (only dynamic)
 
         // [SerializeField, Min(0f)] private float _baseInducedDrag = 0.1f;
         // [SerializeField] private AnimationCurve _IASInducedDragFactor = AnimationCurve.Linear(0f, 1f, 200f, 0.1f);
@@ -72,8 +73,8 @@ namespace Planes.Aerodynamics {
         }
 
         private void UpdateLift() {
-            _lift = transform.up *                                                                                                      // lift direction vector *
-                    0.5f * _airDensity * Mathf.Pow(_speed, 2f) * (_wingAreaX * _wingAreaZ) * _baseLift * _AOALiftFactor.Evaluate(_AOA); // lift force (L = (1/2) * d * v^2 * s * CL)
+            _lift = (_controlSurface == null ? Quaternion.identity : Quaternion.AngleAxis(-_controlSurface.Deflection, transform.right)) * transform.up * // lift direction vector *
+                    0.5f * _airDensity * Mathf.Pow(_speed, 2f) * (_wingAreaX * _wingAreaZ) * _baseLift * _AOALiftFactor.Evaluate(_AOA);                   // lift force (L = (1/2) * d * v^2 * s * CL)
         }
 
         private void ApplyForces() {
