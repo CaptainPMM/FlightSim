@@ -703,37 +703,37 @@ MonoBehaviour:
   _airDensity: 1.225
   _wingAreaX: 2.45
   _wingAreaZ: 1.05
-  _baseLift: 4000
+  _baseLift: 1.5
   _AOALiftFactor:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: -20
-      value: -1
+      value: -0.1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0
+      outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0
-      value: -0.5
-      inSlope: 0.07878987
-      outSlope: 0.07878987
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.103846155
-      outWeight: 0.82051283
-    - serializedVersion: 3
-      time: 3
-      value: 0.1
-      inSlope: 0.20124233
-      outSlope: 0.20124233
+      time: -15
+      value: -1
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.1474359
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0
+      value: 0.1
+      inSlope: 0.09814942
+      outSlope: 0.09814942
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.13328433
+      outWeight: 0.33333334
     - serializedVersion: 3
       time: 15
       value: 1
@@ -742,7 +742,7 @@ MonoBehaviour:
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.78461534
+      outWeight: 0.33333334
     - serializedVersion: 3
       time: 20
       value: 0.1
@@ -751,11 +751,34 @@ MonoBehaviour:
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.33333334
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  _controlSurface: {fileID: 0}
+  _IASInducedDragFactor:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: -0.008402585
+      outSlope: -0.008402585
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.10961539
+    - serializedVersion: 3
+      time: 200
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   _gizmoLocationSize: 0.15
   _gizmoShowWingArea: 1
   _gizmoWingAreaOffset: {x: 0, y: 0, z: -0.08}
@@ -1083,37 +1106,37 @@ MonoBehaviour:
   _airDensity: 1.225
   _wingAreaX: 1.4
   _wingAreaZ: 1.45
-  _baseLift: 4000
+  _baseLift: 1.5
   _AOALiftFactor:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: -20
-      value: -1
+      value: -0.1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0
+      outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0
-      value: -0.5
-      inSlope: 0.07878987
-      outSlope: 0.07878987
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.103846155
-      outWeight: 0.82051283
-    - serializedVersion: 3
-      time: 3
-      value: 0.1
-      inSlope: 0.20124233
-      outSlope: 0.20124233
+      time: -15
+      value: -1
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.1474359
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0
+      value: 0.1
+      inSlope: 0.09814942
+      outSlope: 0.09814942
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.13328433
+      outWeight: 0.33333334
     - serializedVersion: 3
       time: 15
       value: 1
@@ -1122,7 +1145,7 @@ MonoBehaviour:
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.78461534
+      outWeight: 0.33333334
     - serializedVersion: 3
       time: 20
       value: 0.1
@@ -1131,11 +1154,34 @@ MonoBehaviour:
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.33333334
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  _controlSurface: {fileID: 0}
+  _IASInducedDragFactor:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: -0.008402585
+      outSlope: -0.008402585
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.10961539
+    - serializedVersion: 3
+      time: 200
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   _gizmoLocationSize: 0.15
   _gizmoShowWingArea: 1
   _gizmoWingAreaOffset: {x: 0, y: 0, z: -0.3}
@@ -1263,7 +1309,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1149866291591138472}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -0.339, z: -0.332}
+  m_LocalPosition: {x: 0, y: -0.45, z: -0.332}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -1284,9 +1330,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _plane: {fileID: 8496504930888117548}
   _airDensity: 1.225
-  _wingAreaX: 1.5
+  _wingAreaX: 1.45
   _wingAreaZ: 0.8
-  _baseLift: 4000
+  _baseLift: 1.5
   _AOALiftFactor:
     serializedVersion: 2
     m_Curve:
@@ -1320,10 +1366,33 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  _controlSurface: {fileID: 6890574909389044687}
+  _IASInducedDragFactor:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: -0.008402585
+      outSlope: -0.008402585
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.10961539
+    - serializedVersion: 3
+      time: 200
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   _gizmoLocationSize: 0.15
   _gizmoShowWingArea: 1
-  _gizmoWingAreaOffset: {x: 0, y: 0, z: 0}
+  _gizmoWingAreaOffset: {x: 0, y: 0.1, z: 0}
   _gizmoWingAreaSwizzle: 1
   _gizmoShowExtendedChordLine: 0
   _gizmoExtendedChordLineLength: 2
@@ -1377,7 +1446,7 @@ MonoBehaviour:
   _airDensity: 1.225
   _wingAreaX: 1.75
   _wingAreaZ: 0.45
-  _baseLift: 16000
+  _baseLift: 3
   _AOALiftFactor:
     serializedVersion: 2
     m_Curve:
@@ -1411,7 +1480,30 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  _controlSurface: {fileID: 2998871490309429121}
+  _IASInducedDragFactor:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: -0.008402585
+      outSlope: -0.008402585
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.10961539
+    - serializedVersion: 3
+      time: 200
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   _gizmoLocationSize: 0.15
   _gizmoShowWingArea: 1
   _gizmoWingAreaOffset: {x: 0, y: 0, z: -0.03}
@@ -2020,7 +2112,7 @@ MonoBehaviour:
   _airDensity: 1.225
   _wingAreaX: 1.25
   _wingAreaZ: 0.45
-  _baseLift: 16000
+  _baseLift: 3
   _AOALiftFactor:
     serializedVersion: 2
     m_Curve:
@@ -2054,7 +2146,30 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  _controlSurface: {fileID: 2505110321479937910}
+  _IASInducedDragFactor:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: -0.008402585
+      outSlope: -0.008402585
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.10961539
+    - serializedVersion: 3
+      time: 200
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   _gizmoLocationSize: 0.15
   _gizmoShowWingArea: 1
   _gizmoWingAreaOffset: {x: 0, y: 0, z: -0.03}
@@ -2088,7 +2203,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3528595041162537936}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.99, y: 0.0014726073, z: -0.234}
+  m_LocalPosition: {x: -0.99, y: 0.0014726073, z: -0.17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -2109,9 +2224,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _plane: {fileID: 8496504930888117548}
   _airDensity: 1.225
-  _wingAreaX: 1.65
+  _wingAreaX: 1.6
   _wingAreaZ: 0.45
-  _baseLift: 4000
+  _baseLift: 1.5
   _AOALiftFactor:
     serializedVersion: 2
     m_Curve:
@@ -2126,7 +2241,7 @@ MonoBehaviour:
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 0
-      value: -0.1
+      value: -0.15
       inSlope: 0.031509776
       outSlope: 0.031509776
       tangentMode: 0
@@ -2145,10 +2260,33 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  _controlSurface: {fileID: 718389934953915652}
+  _IASInducedDragFactor:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: -0.008402585
+      outSlope: -0.008402585
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.10961539
+    - serializedVersion: 3
+      time: 200
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   _gizmoLocationSize: 0.15
   _gizmoShowWingArea: 1
-  _gizmoWingAreaOffset: {x: 0, y: 0, z: 0}
+  _gizmoWingAreaOffset: {x: 0, y: 0, z: -0.06}
   _gizmoWingAreaSwizzle: 0
   _gizmoShowExtendedChordLine: 0
   _gizmoExtendedChordLineLength: 2
@@ -2179,7 +2317,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3660617917773681638}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.99, y: 0.25, z: -4.456}
+  m_LocalPosition: {x: 0.69, y: 0.25, z: -4.456}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -2202,7 +2340,7 @@ MonoBehaviour:
   _airDensity: 1.225
   _wingAreaX: 1.6
   _wingAreaZ: 0.8
-  _baseLift: 4000
+  _baseLift: 1.5
   _AOALiftFactor:
     serializedVersion: 2
     m_Curve:
@@ -2217,7 +2355,7 @@ MonoBehaviour:
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 0
-      value: -0.1
+      value: -0.15
       inSlope: 0.031509776
       outSlope: 0.031509776
       tangentMode: 0
@@ -2236,10 +2374,33 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  _controlSurface: {fileID: 0}
+  _IASInducedDragFactor:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: -0.008402585
+      outSlope: -0.008402585
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.10961539
+    - serializedVersion: 3
+      time: 200
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   _gizmoLocationSize: 0.15
   _gizmoShowWingArea: 1
-  _gizmoWingAreaOffset: {x: 0, y: 0, z: 0.12}
+  _gizmoWingAreaOffset: {x: 0.2, y: 0, z: 0.12}
   _gizmoWingAreaSwizzle: 0
   _gizmoShowExtendedChordLine: 0
   _gizmoExtendedChordLineLength: 2
@@ -2293,37 +2454,37 @@ MonoBehaviour:
   _airDensity: 1.225
   _wingAreaX: 1.4
   _wingAreaZ: 1.45
-  _baseLift: 4000
+  _baseLift: 1.5
   _AOALiftFactor:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: -20
-      value: -1
+      value: -0.1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0
+      outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0
-      value: -0.5
-      inSlope: 0.07878987
-      outSlope: 0.07878987
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.103846155
-      outWeight: 0.82051283
-    - serializedVersion: 3
-      time: 3
-      value: 0.1
-      inSlope: 0.20124233
-      outSlope: 0.20124233
+      time: -15
+      value: -1
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.1474359
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0
+      value: 0.1
+      inSlope: 0.09814942
+      outSlope: 0.09814942
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.13328433
+      outWeight: 0.33333334
     - serializedVersion: 3
       time: 15
       value: 1
@@ -2332,7 +2493,7 @@ MonoBehaviour:
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.78461534
+      outWeight: 0.33333334
     - serializedVersion: 3
       time: 20
       value: 0.1
@@ -2341,11 +2502,34 @@ MonoBehaviour:
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.33333334
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  _controlSurface: {fileID: 0}
+  _IASInducedDragFactor:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: -0.008402585
+      outSlope: -0.008402585
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.10961539
+    - serializedVersion: 3
+      time: 200
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   _gizmoLocationSize: 0.15
   _gizmoShowWingArea: 1
   _gizmoWingAreaOffset: {x: 0, y: 0, z: -0.3}
@@ -2402,7 +2586,7 @@ MonoBehaviour:
   _airDensity: 1.225
   _wingAreaX: 1.75
   _wingAreaZ: 0.45
-  _baseLift: 16000
+  _baseLift: 3
   _AOALiftFactor:
     serializedVersion: 2
     m_Curve:
@@ -2436,7 +2620,30 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  _controlSurface: {fileID: 2505110321479937910}
+  _IASInducedDragFactor:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: -0.008402585
+      outSlope: -0.008402585
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.10961539
+    - serializedVersion: 3
+      time: 200
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   _gizmoLocationSize: 0.15
   _gizmoShowWingArea: 1
   _gizmoWingAreaOffset: {x: 0, y: 0, z: -0.03}
@@ -3050,37 +3257,37 @@ MonoBehaviour:
   _airDensity: 1.225
   _wingAreaX: 2
   _wingAreaZ: 0.9
-  _baseLift: 1000
+  _baseLift: 0.5
   _AOALiftFactor:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: -20
-      value: -1
+      value: -0.1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0
+      outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0
-      value: -0.5
-      inSlope: 0.07878987
-      outSlope: 0.07878987
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.103846155
-      outWeight: 0.82051283
-    - serializedVersion: 3
-      time: 3
-      value: 0.1
-      inSlope: 0.20124233
-      outSlope: 0.20124233
+      time: -15
+      value: -1
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.1474359
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0
+      value: 0.1
+      inSlope: 0.09814942
+      outSlope: 0.09814942
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.13328433
+      outWeight: 0.33333334
     - serializedVersion: 3
       time: 15
       value: 1
@@ -3089,7 +3296,7 @@ MonoBehaviour:
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.78461534
+      outWeight: 0.33333334
     - serializedVersion: 3
       time: 20
       value: 0.1
@@ -3098,11 +3305,34 @@ MonoBehaviour:
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.33333334
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  _controlSurface: {fileID: 0}
+  _IASInducedDragFactor:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: -0.008402585
+      outSlope: -0.008402585
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.10961539
+    - serializedVersion: 3
+      time: 200
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   _gizmoLocationSize: 0.15
   _gizmoShowWingArea: 1
   _gizmoWingAreaOffset: {x: 0, y: 0, z: -0.12}
@@ -3159,7 +3389,7 @@ MonoBehaviour:
   _airDensity: 1.225
   _wingAreaX: 1.25
   _wingAreaZ: 0.45
-  _baseLift: 16000
+  _baseLift: 3
   _AOALiftFactor:
     serializedVersion: 2
     m_Curve:
@@ -3193,7 +3423,30 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  _controlSurface: {fileID: 2998871490309429121}
+  _IASInducedDragFactor:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: -0.008402585
+      outSlope: -0.008402585
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.10961539
+    - serializedVersion: 3
+      time: 200
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   _gizmoLocationSize: 0.15
   _gizmoShowWingArea: 1
   _gizmoWingAreaOffset: {x: 0, y: 0, z: -0.03}
@@ -3227,7 +3480,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5232057065704240846}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.99, y: 0.0014726073, z: -0.234}
+  m_LocalPosition: {x: 0.99, y: 0.0014726073, z: -0.17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -3248,9 +3501,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _plane: {fileID: 8496504930888117548}
   _airDensity: 1.225
-  _wingAreaX: 1.65
+  _wingAreaX: 1.6
   _wingAreaZ: 0.45
-  _baseLift: 4000
+  _baseLift: 1.5
   _AOALiftFactor:
     serializedVersion: 2
     m_Curve:
@@ -3265,7 +3518,7 @@ MonoBehaviour:
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 0
-      value: -0.1
+      value: -0.15
       inSlope: 0.031509776
       outSlope: 0.031509776
       tangentMode: 0
@@ -3284,10 +3537,33 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  _controlSurface: {fileID: 718389934953915652}
+  _IASInducedDragFactor:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: -0.008402585
+      outSlope: -0.008402585
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.10961539
+    - serializedVersion: 3
+      time: 200
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   _gizmoLocationSize: 0.15
   _gizmoShowWingArea: 1
-  _gizmoWingAreaOffset: {x: 0, y: 0, z: 0}
+  _gizmoWingAreaOffset: {x: 0, y: 0, z: -0.06}
   _gizmoWingAreaSwizzle: 0
   _gizmoShowExtendedChordLine: 0
   _gizmoExtendedChordLineLength: 2
@@ -3425,7 +3701,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5573675311363368920}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0, y: 0.57, z: -4.586}
+  m_LocalPosition: {x: -0, y: 0.6, z: -4.65}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -3446,9 +3722,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _plane: {fileID: 8496504930888117548}
   _airDensity: 1.225
-  _wingAreaX: 0.55
+  _wingAreaX: 0.85
   _wingAreaZ: 0.55
-  _baseLift: 4000
+  _baseLift: 1.5
   _AOALiftFactor:
     serializedVersion: 2
     m_Curve:
@@ -3482,10 +3758,33 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  _controlSurface: {fileID: 0}
+  _IASInducedDragFactor:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: -0.008402585
+      outSlope: -0.008402585
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.10961539
+    - serializedVersion: 3
+      time: 200
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   _gizmoLocationSize: 0.15
   _gizmoShowWingArea: 1
-  _gizmoWingAreaOffset: {x: 0, y: 0, z: 0}
+  _gizmoWingAreaOffset: {x: 0, y: 0.15, z: 0.06}
   _gizmoWingAreaSwizzle: 1
   _gizmoShowExtendedChordLine: 0
   _gizmoExtendedChordLineLength: 2
@@ -3539,37 +3838,37 @@ MonoBehaviour:
   _airDensity: 1.225
   _wingAreaX: 1.5
   _wingAreaZ: 1.05
-  _baseLift: 4000
+  _baseLift: 1.5
   _AOALiftFactor:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: -20
-      value: -1
+      value: -0.1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0
+      outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0
-      value: -0.5
-      inSlope: 0.07878987
-      outSlope: 0.07878987
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.103846155
-      outWeight: 0.82051283
-    - serializedVersion: 3
-      time: 3
-      value: 0.1
-      inSlope: 0.20124233
-      outSlope: 0.20124233
+      time: -15
+      value: -1
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.1474359
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0
+      value: 0.1
+      inSlope: 0.09814942
+      outSlope: 0.09814942
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.13328433
+      outWeight: 0.33333334
     - serializedVersion: 3
       time: 15
       value: 1
@@ -3578,7 +3877,7 @@ MonoBehaviour:
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.78461534
+      outWeight: 0.33333334
     - serializedVersion: 3
       time: 20
       value: 0.1
@@ -3587,11 +3886,34 @@ MonoBehaviour:
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.33333334
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  _controlSurface: {fileID: 0}
+  _IASInducedDragFactor:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: -0.008402585
+      outSlope: -0.008402585
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.10961539
+    - serializedVersion: 3
+      time: 200
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   _gizmoLocationSize: 0.15
   _gizmoShowWingArea: 1
   _gizmoWingAreaOffset: {x: 0, y: 0, z: -0.08}
@@ -4351,37 +4673,37 @@ MonoBehaviour:
   _airDensity: 1.225
   _wingAreaX: 2
   _wingAreaZ: 1.45
-  _baseLift: 4000
+  _baseLift: 1.5
   _AOALiftFactor:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: -20
-      value: -1
+      value: -0.1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0
+      outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0
-      value: -0.5
-      inSlope: 0.07878987
-      outSlope: 0.07878987
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.103846155
-      outWeight: 0.82051283
-    - serializedVersion: 3
-      time: 3
-      value: 0.1
-      inSlope: 0.20124233
-      outSlope: 0.20124233
+      time: -15
+      value: -1
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.1474359
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0
+      value: 0.1
+      inSlope: 0.09814942
+      outSlope: 0.09814942
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.13328433
+      outWeight: 0.33333334
     - serializedVersion: 3
       time: 15
       value: 1
@@ -4390,7 +4712,7 @@ MonoBehaviour:
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.78461534
+      outWeight: 0.33333334
     - serializedVersion: 3
       time: 20
       value: 0.1
@@ -4399,11 +4721,34 @@ MonoBehaviour:
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.33333334
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  _controlSurface: {fileID: 0}
+  _IASInducedDragFactor:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: -0.008402585
+      outSlope: -0.008402585
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.10961539
+    - serializedVersion: 3
+      time: 200
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   _gizmoLocationSize: 0.15
   _gizmoShowWingArea: 1
   _gizmoWingAreaOffset: {x: 0, y: 0, z: -0.3}
@@ -4712,7 +5057,7 @@ Rigidbody:
   m_Mass: 980
   m_Drag: 0.0375
   m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: -0.2}
+  m_CenterOfMass: {x: 0, y: 0, z: -0.175}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
   m_IncludeLayers:
@@ -5310,37 +5655,37 @@ MonoBehaviour:
   _airDensity: 1.225
   _wingAreaX: 1.5
   _wingAreaZ: 1.05
-  _baseLift: 4000
+  _baseLift: 1.5
   _AOALiftFactor:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: -20
-      value: -1
+      value: -0.1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0
+      outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0
-      value: -0.5
-      inSlope: 0.07878987
-      outSlope: 0.07878987
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.103846155
-      outWeight: 0.82051283
-    - serializedVersion: 3
-      time: 3
-      value: 0.1
-      inSlope: 0.20124233
-      outSlope: 0.20124233
+      time: -15
+      value: -1
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.1474359
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0
+      value: 0.1
+      inSlope: 0.09814942
+      outSlope: 0.09814942
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.13328433
+      outWeight: 0.33333334
     - serializedVersion: 3
       time: 15
       value: 1
@@ -5349,7 +5694,7 @@ MonoBehaviour:
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.78461534
+      outWeight: 0.33333334
     - serializedVersion: 3
       time: 20
       value: 0.1
@@ -5358,11 +5703,34 @@ MonoBehaviour:
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.33333334
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  _controlSurface: {fileID: 0}
+  _IASInducedDragFactor:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: -0.008402585
+      outSlope: -0.008402585
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.10961539
+    - serializedVersion: 3
+      time: 200
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   _gizmoLocationSize: 0.15
   _gizmoShowWingArea: 1
   _gizmoWingAreaOffset: {x: 0, y: 0, z: -0.08}
@@ -5513,37 +5881,37 @@ MonoBehaviour:
   _airDensity: 1.225
   _wingAreaX: 2
   _wingAreaZ: 1.45
-  _baseLift: 4000
+  _baseLift: 1.5
   _AOALiftFactor:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: -20
-      value: -1
+      value: -0.1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0
+      outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0
-      value: -0.5
-      inSlope: 0.07878987
-      outSlope: 0.07878987
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.103846155
-      outWeight: 0.82051283
-    - serializedVersion: 3
-      time: 3
-      value: 0.1
-      inSlope: 0.20124233
-      outSlope: 0.20124233
+      time: -15
+      value: -1
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.1474359
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0
+      value: 0.1
+      inSlope: 0.09814942
+      outSlope: 0.09814942
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.13328433
+      outWeight: 0.33333334
     - serializedVersion: 3
       time: 15
       value: 1
@@ -5552,7 +5920,7 @@ MonoBehaviour:
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.78461534
+      outWeight: 0.33333334
     - serializedVersion: 3
       time: 20
       value: 0.1
@@ -5561,11 +5929,34 @@ MonoBehaviour:
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.33333334
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  _controlSurface: {fileID: 0}
+  _IASInducedDragFactor:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: -0.008402585
+      outSlope: -0.008402585
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.10961539
+    - serializedVersion: 3
+      time: 200
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   _gizmoLocationSize: 0.15
   _gizmoShowWingArea: 1
   _gizmoWingAreaOffset: {x: 0, y: 0, z: -0.3}
@@ -5622,37 +6013,37 @@ MonoBehaviour:
   _airDensity: 1.225
   _wingAreaX: 2.45
   _wingAreaZ: 1.05
-  _baseLift: 4000
+  _baseLift: 1.5
   _AOALiftFactor:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: -20
-      value: -1
+      value: -0.1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0
+      outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0
-      value: -0.5
-      inSlope: 0.07878987
-      outSlope: 0.07878987
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.103846155
-      outWeight: 0.82051283
-    - serializedVersion: 3
-      time: 3
-      value: 0.1
-      inSlope: 0.20124233
-      outSlope: 0.20124233
+      time: -15
+      value: -1
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.1474359
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0
+      value: 0.1
+      inSlope: 0.09814942
+      outSlope: 0.09814942
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.13328433
+      outWeight: 0.33333334
     - serializedVersion: 3
       time: 15
       value: 1
@@ -5661,7 +6052,7 @@ MonoBehaviour:
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.78461534
+      outWeight: 0.33333334
     - serializedVersion: 3
       time: 20
       value: 0.1
@@ -5670,11 +6061,34 @@ MonoBehaviour:
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.33333334
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  _controlSurface: {fileID: 0}
+  _IASInducedDragFactor:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: -0.008402585
+      outSlope: -0.008402585
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.10961539
+    - serializedVersion: 3
+      time: 200
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   _gizmoLocationSize: 0.15
   _gizmoShowWingArea: 1
   _gizmoWingAreaOffset: {x: 0, y: 0, z: -0.08}
@@ -5708,7 +6122,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9150415530928011647}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.99, y: 0.25, z: -4.456}
+  m_LocalPosition: {x: -0.79, y: 0.25, z: -4.456}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -5731,7 +6145,7 @@ MonoBehaviour:
   _airDensity: 1.225
   _wingAreaX: 1.6
   _wingAreaZ: 0.8
-  _baseLift: 4000
+  _baseLift: 1.5
   _AOALiftFactor:
     serializedVersion: 2
     m_Curve:
@@ -5746,7 +6160,7 @@ MonoBehaviour:
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 0
-      value: -0.1
+      value: -0.15
       inSlope: 0.031509776
       outSlope: 0.031509776
       tangentMode: 0
@@ -5765,10 +6179,33 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  _controlSurface: {fileID: 0}
+  _IASInducedDragFactor:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: -0.008402585
+      outSlope: -0.008402585
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.10961539
+    - serializedVersion: 3
+      time: 200
+      value: 0.1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   _gizmoLocationSize: 0.15
   _gizmoShowWingArea: 1
-  _gizmoWingAreaOffset: {x: 0, y: 0, z: 0.12}
+  _gizmoWingAreaOffset: {x: -0.2, y: 0, z: 0.12}
   _gizmoWingAreaSwizzle: 0
   _gizmoShowExtendedChordLine: 0
   _gizmoExtendedChordLineLength: 2

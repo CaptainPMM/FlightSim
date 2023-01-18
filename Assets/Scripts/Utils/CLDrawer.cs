@@ -7,9 +7,9 @@ namespace Utils {
 
         private AerodynamicEffector[] _liftEffectors;
 
+        private float _totalLiftForce;
+        private Vector3 _totalWeightedLiftPosition;
         private Vector3 _cl;
-        private Vector3 _totalLiftVector;
-        private float _totalLift;
 
         private void Start() {
             _liftEffectors = GetComponentsInChildren<AerodynamicEffector>();
@@ -18,13 +18,13 @@ namespace Utils {
         private void OnDrawGizmosSelected() {
             if (!Application.isPlaying) return;
 
-            _totalLiftVector = Vector3.zero;
-            _totalLift = 0f;
+            _totalLiftForce = 0f;
+            _totalWeightedLiftPosition = Vector3.zero;
             foreach (AerodynamicEffector l in _liftEffectors) {
-                _totalLiftVector += l.transform.position * l.Lift.sqrMagnitude;
-                _totalLift += l.Lift.sqrMagnitude;
+                _totalLiftForce += l.LiftVector.sqrMagnitude;
+                _totalWeightedLiftPosition += l.transform.position * l.LiftVector.sqrMagnitude;
             }
-            _cl = _totalLiftVector / _totalLift;
+            _cl = _totalWeightedLiftPosition / _totalLiftForce;
 
             Gizmos.color = Color.blue;
             Gizmos.DrawSphere(_cl, radius);

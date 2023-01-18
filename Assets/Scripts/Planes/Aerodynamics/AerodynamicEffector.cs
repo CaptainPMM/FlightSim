@@ -5,16 +5,15 @@ namespace Planes.Aerodynamics {
         [Header("Setup")]
         [SerializeField] private PlaneController _plane;
 
-        [Header("Settings")]
+        [Header("Settings/Lift")]
         [SerializeField, Min(0f)] private float _airDensity = 1.225f; // [d] kg/m^3 (standard sea level)
         [SerializeField, Min(0f)] private float _wingAreaX = 1f; // m -> X * Z => [s] in m^2
         [SerializeField, Min(0f)] private float _wingAreaZ = 1f; // m -> X * Z => [s] in m^2
         [SerializeField] private float _baseLift = 1f; // newtons
-        [SerializeField] private AnimationCurve _AOALiftFactor = AnimationCurve.Linear(-20f, 0f, 20f, 0f); // base lift * f(AOA) = [CL] lift coefficient
-        [SerializeField] private ControlSurfaceController _controlSurface = null; // Leave null for static effectors (only dynamic)
+        [SerializeField] private AnimationCurve _AOALiftFactor = AnimationCurve.Linear(-20f, -1f, 20f, 1f); // base lift * f(AOA) = [CL] lift coefficient
 
-        // [SerializeField, Min(0f)] private float _baseInducedDrag = 0.1f;
-        // [SerializeField] private AnimationCurve _IASInducedDragFactor = AnimationCurve.Linear(0f, 1f, 200f, 0.1f);
+        [Header("Settings/Drag")]
+        [SerializeField] private AnimationCurve _IASInducedDragFactor = AnimationCurve.Linear(0f, 1f, 200f, 0.1f);
 
 #if UNITY_EDITOR
         [Header("Settings/Gizmos")]
@@ -33,14 +32,21 @@ namespace Planes.Aerodynamics {
         private Vector3 _oldPos;
         private Vector3 _velocity;
         private float _speed;
-        // private float _IAS;
+        private float _IAS;
 
         private Vector3 _wingChordLine;
         private Vector3 _relativeWind;
         private float _AOA;
 
-        private Vector3 _lift;
-        public Vector3 Lift => _lift;
+        private Vector3 _airflow;
+
+        private float _liftForce;
+        private Vector3 _liftDirection;
+        private Vector3 _liftVector;
+
+        public float LiftForce => _liftForce;
+        public Vector3 LiftDirection => _liftDirection;
+        public Vector3 LiftVector => _liftVector;
 
         private void Awake() {
             if (!_plane) Debug.LogWarning("AerodynamicEffector: no plane assigned");
@@ -59,11 +65,11 @@ namespace Planes.Aerodynamics {
         }
 
         private void UpdateVelocity() {
-            _velocity = transform.position - _oldPos;
+            _velocity = (transform.position - _oldPos) / Time.fixedDeltaTime;
             _oldPos = transform.position;
 
             _speed = _velocity.magnitude;
-            // _IAS = _speed * 1.94384f; // m/s to knots conversion
+            _IAS = _speed * 1.94384f; // m/s to knots conversion
         }
 
         private void UpdateAOA() {
@@ -73,12 +79,16 @@ namespace Planes.Aerodynamics {
         }
 
         private void UpdateLift() {
-            _lift = (_controlSurface == null ? Quaternion.identity : Quaternion.AngleAxis(-_controlSurface.Deflection, transform.right)) * transform.up * // lift direction vector *
-                    0.5f * _airDensity * Mathf.Pow(_speed, 2f) * (_wingAreaX * _wingAreaZ) * _baseLift * _AOALiftFactor.Evaluate(_AOA);                   // lift force (L = (1/2) * d * v^2 * s * CL)
+            // Induced drag -> tilt lift vector backwards based on IAS e.g. |_ => /
+            _airflow = Vector3.Lerp(_relativeWind, _wingChordLine, _IASInducedDragFactor.Evaluate(_IAS));
+
+            _liftForce = 0.5f * _airDensity * Mathf.Pow(_speed, 2f) * (_wingAreaX * _wingAreaZ) * _baseLift * _AOALiftFactor.Evaluate(_AOA); // L = (1/2) * d * v^2 * s * CL
+            _liftDirection = Vector3.Cross(_airflow, transform.right).normalized; // perpendicular to airflow
+            _liftVector = _liftForce * _liftDirection;
         }
 
         private void ApplyForces() {
-            _rb.AddForceAtPosition(_lift, transform.position, ForceMode.Force);
+            _rb.AddForceAtPosition(_liftVector, transform.position, ForceMode.Force);
         }
 
 #if UNITY_EDITOR
@@ -102,11 +112,17 @@ namespace Planes.Aerodynamics {
             Gizmos.DrawLine(transform.position, transform.position + _wingChordLine * _gizmoAOALength);
             Gizmos.color = Color.blue;
             Gizmos.DrawLine(transform.position, transform.position + _relativeWind * _gizmoAOALength);
+            Gizmos.color = Color.red;
+            Gizmos.DrawLine(transform.position, transform.position + _airflow * _gizmoAOALength);
 
+            Vector3 liftWithoutDragVector = _liftForce * Vector3.Cross(_relativeWind, transform.right).normalized;
+            Vector3 liftWithoutDragVectorPos = transform.position + liftWithoutDragVector * _gizmoLiftLength;
+            Vector3 dragVector = _liftVector - liftWithoutDragVector;
+            Gizmos.DrawLine(liftWithoutDragVectorPos, liftWithoutDragVectorPos + dragVector * _gizmoLiftLength);
+            Gizmos.color = Color.white;
+            Gizmos.DrawLine(transform.position, liftWithoutDragVectorPos);
             Gizmos.color = Color.cyan;
-            Gizmos.DrawLine(transform.position, transform.position + _lift * _gizmoLiftLength);
-
-            // Gizmos.color = Color.yellow;  TODO Draw induced drag...
+            Gizmos.DrawLine(transform.position, transform.position + _liftVector * _gizmoLiftLength);
         }
 #endif
     }

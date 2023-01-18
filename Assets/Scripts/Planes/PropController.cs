@@ -103,7 +103,7 @@ namespace Planes {
 
         private void OnDrawGizmosSelected() {
             if (!Application.isPlaying) return;
-            Gizmos.color = Color.red;
+            Gizmos.color = Color.yellow;
             Gizmos.DrawLine(_forceOrigin.position, _forceOrigin.position + _forceVector * _gizmoThrustLength);
         }
 #endif
