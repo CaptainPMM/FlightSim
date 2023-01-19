@@ -2,18 +2,23 @@ using UnityEngine;
 
 namespace Planes.Aerodynamics {
     public class AerodynamicEffector : MonoBehaviour {
+        public const float AIR_DENSITY_SL = 1.2250f; // kg/m^3 (standard sea level)
+        public const float AIR_DENSITY_LAPSE_RATE_DEFAULT = 0.0354f; // 𝚫 air density / 1000ft
+
         [Header("Setup")]
         [SerializeField] private PlaneController _plane;
 
         [Header("Settings/Lift")]
-        [SerializeField, Min(0f)] private float _airDensity = 1.225f; // [d] kg/m^3 (standard sea level)
+        [SerializeField, Min(0f)] private float _airDensitySL = AIR_DENSITY_SL; // kg/m^3
+        [SerializeField, Min(0f)] private float _airDensityLapseRate = AIR_DENSITY_LAPSE_RATE_DEFAULT; // 𝚫 air density / 1000ft
+        [SerializeField, Min(0f)] private float _airDensity = AIR_DENSITY_SL; // [d] kg/m^3 (standard sea level)
         [SerializeField, Min(0f)] private float _wingAreaX = 1f; // m -> X * Z => [s] in m^2
         [SerializeField, Min(0f)] private float _wingAreaZ = 1f; // m -> X * Z => [s] in m^2
         [SerializeField] private float _baseLift = 1f; // newtons
         [SerializeField] private AnimationCurve _AOALiftFactor = AnimationCurve.Linear(-20f, -1f, 20f, 1f); // base lift * f(AOA) = [CL] lift coefficient
 
         [Header("Settings/Drag")]
-        [SerializeField] private AnimationCurve _IASInducedDragFactor = AnimationCurve.Linear(0f, 1f, 200f, 0.1f);
+        [SerializeField] private AnimationCurve _TASInducedDragFactor = AnimationCurve.Linear(0f, 1f, 200f, 0.1f);
 
 #if UNITY_EDITOR
         [Header("Settings/Gizmos")]
@@ -29,10 +34,12 @@ namespace Planes.Aerodynamics {
 
         private Rigidbody _rb;
 
+        private float _ALT;
+
         private Vector3 _oldPos;
         private Vector3 _velocity;
         private float _speed;
-        private float _IAS;
+        private float _TAS;
 
         private Vector3 _wingChordLine;
         private Vector3 _relativeWind;
@@ -58,10 +65,18 @@ namespace Planes.Aerodynamics {
         }
 
         private void FixedUpdate() {
+            UpdateAirDensity();
             UpdateVelocity();
             UpdateAOA();
             UpdateLift();
             ApplyForces();
+        }
+
+        private void UpdateAirDensity() {
+            _ALT = transform.position.y * 3.28084f; // m to feet conversion
+
+            if (_airDensityLapseRate == 0f) return;
+            _airDensity = _airDensitySL - _airDensityLapseRate * _ALT / 1000f;
         }
 
         private void UpdateVelocity() {
@@ -69,7 +84,7 @@ namespace Planes.Aerodynamics {
             _oldPos = transform.position;
 
             _speed = _velocity.magnitude;
-            _IAS = _speed * 1.94384f; // m/s to knots conversion
+            _TAS = _speed * 1.94384f; // m/s to knots conversion
         }
 
         private void UpdateAOA() {
@@ -79,8 +94,8 @@ namespace Planes.Aerodynamics {
         }
 
         private void UpdateLift() {
-            // Induced drag -> tilt lift vector backwards based on IAS e.g. |_ => /
-            _airflow = Vector3.Lerp(_relativeWind, _wingChordLine, _IASInducedDragFactor.Evaluate(_IAS));
+            // Induced drag -> tilt lift vector backwards based on TAS e.g. |_ => /
+            _airflow = Vector3.Lerp(_relativeWind, _wingChordLine, _TASInducedDragFactor.Evaluate(_TAS));
 
             _liftForce = 0.5f * _airDensity * Mathf.Pow(_speed, 2f) * (_wingAreaX * _wingAreaZ) * _baseLift * _AOALiftFactor.Evaluate(_AOA); // L = (1/2) * d * v^2 * s * CL
             _liftDirection = Vector3.Cross(_airflow, transform.right).normalized; // perpendicular to airflow
