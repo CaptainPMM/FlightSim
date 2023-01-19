@@ -271,8 +271,8 @@ MonoBehaviour:
   _model: {fileID: 6217683068987263926}
   _type: 0
   _invert: 1
-  _maxPosDeflection: 35
-  _maxNegDeflection: 35
+  _maxPosDeflection: 30
+  _maxNegDeflection: 30
   _gizmoDeflectionLength: 1
   _gizmoDeflectionColor: {r: 1, g: 1, b: 1, a: 1}
   _gizmoSurfColor: {r: 1, g: 1, b: 1, a: 1}
@@ -572,26 +572,26 @@ MonoBehaviour:
       time: 0
       value: 0
       inSlope: 0
-      outSlope: 0.1
-      tangentMode: 69
+      outSlope: 0
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
       time: 0.25
       value: 0.025
-      inSlope: 0.1
-      outSlope: 6.633333
-      tangentMode: 69
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 1
-      value: 5
-      inSlope: 6.633333
+      value: 4.5
+      inSlope: 0
       outSlope: 0
-      tangentMode: 69
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0
       outWeight: 0
@@ -1332,7 +1332,7 @@ MonoBehaviour:
   _airDensity: 1.225
   _wingAreaX: 1.45
   _wingAreaZ: 0.8
-  _baseLift: 1.5
+  _baseLift: 3
   _AOALiftFactor:
     serializedVersion: 2
     m_Curve:
@@ -1446,7 +1446,7 @@ MonoBehaviour:
   _airDensity: 1.225
   _wingAreaX: 1.75
   _wingAreaZ: 0.45
-  _baseLift: 3
+  _baseLift: 6
   _AOALiftFactor:
     serializedVersion: 2
     m_Curve:
@@ -1460,13 +1460,13 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 3
+      time: 0
       value: 0.1
-      inSlope: 0.03269294
-      outSlope: 0.03269294
+      inSlope: 0.02910736
+      outSlope: 0.02910736
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.04342432
+      inWeight: 0.073076926
       outWeight: 0.06498674
     - serializedVersion: 3
       time: 90
@@ -1614,8 +1614,8 @@ MonoBehaviour:
   _model: {fileID: 4242275496905009844}
   _type: 0
   _invert: 0
-  _maxPosDeflection: 35
-  _maxNegDeflection: 35
+  _maxPosDeflection: 30
+  _maxNegDeflection: 30
   _gizmoDeflectionLength: 1
   _gizmoDeflectionColor: {r: 1, g: 1, b: 1, a: 1}
   _gizmoSurfColor: {r: 1, g: 1, b: 1, a: 1}
@@ -2112,7 +2112,7 @@ MonoBehaviour:
   _airDensity: 1.225
   _wingAreaX: 1.25
   _wingAreaZ: 0.45
-  _baseLift: 3
+  _baseLift: 6
   _AOALiftFactor:
     serializedVersion: 2
     m_Curve:
@@ -2126,13 +2126,13 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 3
+      time: 0
       value: 0.1
-      inSlope: 0.03269294
-      outSlope: 0.03269294
+      inSlope: 0.02910736
+      outSlope: 0.02910736
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.04342432
+      inWeight: 0.073076926
       outWeight: 0.06498674
     - serializedVersion: 3
       time: 90
@@ -2226,7 +2226,7 @@ MonoBehaviour:
   _airDensity: 1.225
   _wingAreaX: 1.6
   _wingAreaZ: 0.45
-  _baseLift: 1.5
+  _baseLift: 3
   _AOALiftFactor:
     serializedVersion: 2
     m_Curve:
@@ -2241,13 +2241,13 @@ MonoBehaviour:
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 0
-      value: -0.15
-      inSlope: 0.031509776
-      outSlope: 0.031509776
+      value: -0.1
+      inSlope: 0.028542114
+      outSlope: 0.028542114
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.06153846
-      outWeight: 0.05769231
+      outWeight: 0.073076926
     - serializedVersion: 3
       time: 90
       value: 1
@@ -2355,13 +2355,13 @@ MonoBehaviour:
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 0
-      value: -0.15
-      inSlope: 0.031509776
-      outSlope: 0.031509776
+      value: -0.1
+      inSlope: 0.028542114
+      outSlope: 0.028542114
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.06153846
-      outWeight: 0.05769231
+      outWeight: 0.073076926
     - serializedVersion: 3
       time: 90
       value: 1
@@ -2586,7 +2586,7 @@ MonoBehaviour:
   _airDensity: 1.225
   _wingAreaX: 1.75
   _wingAreaZ: 0.45
-  _baseLift: 3
+  _baseLift: 6
   _AOALiftFactor:
     serializedVersion: 2
     m_Curve:
@@ -2600,13 +2600,13 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 3
+      time: 0
       value: 0.1
-      inSlope: 0.03269294
-      outSlope: 0.03269294
+      inSlope: 0.02910736
+      outSlope: 0.02910736
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.04342432
+      inWeight: 0.073076926
       outWeight: 0.06498674
     - serializedVersion: 3
       time: 90
@@ -2701,8 +2701,8 @@ MonoBehaviour:
   _model: {fileID: 396489214508456741}
   _type: 1
   _invert: 0
-  _maxPosDeflection: 40
-  _maxNegDeflection: 40
+  _maxPosDeflection: 35
+  _maxNegDeflection: 35
   _gizmoDeflectionLength: 1.5
   _gizmoDeflectionColor: {r: 1, g: 1, b: 1, a: 1}
   _gizmoSurfColor: {r: 1, g: 1, b: 1, a: 1}
@@ -3389,7 +3389,7 @@ MonoBehaviour:
   _airDensity: 1.225
   _wingAreaX: 1.25
   _wingAreaZ: 0.45
-  _baseLift: 3
+  _baseLift: 6
   _AOALiftFactor:
     serializedVersion: 2
     m_Curve:
@@ -3403,13 +3403,13 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 3
+      time: 0
       value: 0.1
-      inSlope: 0.03269294
-      outSlope: 0.03269294
+      inSlope: 0.02910736
+      outSlope: 0.02910736
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.04342432
+      inWeight: 0.073076926
       outWeight: 0.06498674
     - serializedVersion: 3
       time: 90
@@ -3503,7 +3503,7 @@ MonoBehaviour:
   _airDensity: 1.225
   _wingAreaX: 1.6
   _wingAreaZ: 0.45
-  _baseLift: 1.5
+  _baseLift: 3
   _AOALiftFactor:
     serializedVersion: 2
     m_Curve:
@@ -3518,13 +3518,13 @@ MonoBehaviour:
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 0
-      value: -0.15
-      inSlope: 0.031509776
-      outSlope: 0.031509776
+      value: -0.1
+      inSlope: 0.028542114
+      outSlope: 0.028542114
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.06153846
-      outWeight: 0.05769231
+      outWeight: 0.073076926
     - serializedVersion: 3
       time: 90
       value: 1
@@ -5055,9 +5055,9 @@ Rigidbody:
   m_GameObject: {fileID: 6829262450420826059}
   serializedVersion: 4
   m_Mass: 980
-  m_Drag: 0.0375
+  m_Drag: 0.05
   m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: -0.175}
+  m_CenterOfMass: {x: 0, y: 0, z: -0.1}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
   m_IncludeLayers:
@@ -6160,13 +6160,13 @@ MonoBehaviour:
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 0
-      value: -0.15
-      inSlope: 0.031509776
-      outSlope: 0.031509776
+      value: -0.1
+      inSlope: 0.028542114
+      outSlope: 0.028542114
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.06153846
-      outWeight: 0.05769231
+      outWeight: 0.073076926
     - serializedVersion: 3
       time: 90
       value: 1

@@ -74,7 +74,7 @@ namespace Planes.Aerodynamics {
 
         private void UpdateAOA() {
             _wingChordLine = transform.forward;
-            _relativeWind = _velocity.normalized;
+            _relativeWind = Vector3.ProjectOnPlane(_velocity, transform.right).normalized;
             _AOA = Vector3.SignedAngle(_wingChordLine, _relativeWind, transform.right);
         }
 
