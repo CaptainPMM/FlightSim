@@ -1,7 +1,8 @@
 using UnityEngine;
+using Utils;
 
 namespace Planes {
-    public class PropController : MonoBehaviour {
+    public class PropController : MonoBehaviour, IDebugDraw {
         [Header("Setup")]
         [SerializeField] private PlaneController _plane = null;
         [SerializeField] private Transform _model = null;
@@ -16,10 +17,8 @@ namespace Planes {
         public int IdleRPM => _idleRPM;
         public int MaxRPM => _maxRPM;
 
-#if UNITY_EDITOR
         [Header("Setup/Gizmos")]
         [SerializeField, Min(0f)] private float _gizmoThrustLength = 0.1f;
-#endif
 
         [Header("Runtime")]
         [SerializeField, Min(0f)] private float _RPM = 0f;
@@ -93,6 +92,11 @@ namespace Planes {
                 return;
             }
             _targetRPM = 0;
+        }
+
+        public bool DebugDrawActive => enabled && gameObject.activeInHierarchy;
+        public void DebugDraw() {
+            DebugDrawer.Line("propThrust", _forceOrigin.position, _forceOrigin.position + _forceVector * _gizmoThrustLength, Color.yellow);
         }
 
 #if UNITY_EDITOR

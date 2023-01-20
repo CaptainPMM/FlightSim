@@ -16,7 +16,7 @@ namespace World {
         }
 
         private void Update() {
-            if (Input.GetKeyDown(KeyCode.Alpha7)) EnableTestRunway = !_enableTestRunway;
+            if (Input.GetKeyDown(KeyCode.Alpha6)) EnableTestRunway = !_enableTestRunway;
         }
 
 #if UNITY_EDITOR

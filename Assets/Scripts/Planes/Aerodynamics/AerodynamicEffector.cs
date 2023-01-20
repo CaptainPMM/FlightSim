@@ -1,7 +1,8 @@
 using UnityEngine;
+using Utils;
 
 namespace Planes.Aerodynamics {
-    public class AerodynamicEffector : MonoBehaviour {
+    public class AerodynamicEffector : MonoBehaviour, IDebugDraw {
         public const float AIR_DENSITY_SL = 1.2250f; // kg/m^3 (standard sea level)
         public const float AIR_DENSITY_LAPSE_RATE_DEFAULT = 0.0354f; // 𝚫 air density / 1000ft
 
@@ -28,9 +29,9 @@ namespace Planes.Aerodynamics {
         [SerializeField] private bool _gizmoWingAreaSwizzle = false;
         [SerializeField] private bool _gizmoShowExtendedChordLine = false;
         [SerializeField, Min(0f)] private float _gizmoExtendedChordLineLength = 1f;
+#endif
         [SerializeField, Min(0f)] private float _gizmoAOALength = 1f;
         [SerializeField, Min(0f)] private float _gizmoLiftLength = 1f;
-#endif
 
         private Rigidbody _rb;
 
@@ -54,6 +55,9 @@ namespace Planes.Aerodynamics {
         public float LiftForce => _liftForce;
         public Vector3 LiftDirection => _liftDirection;
         public Vector3 LiftVector => _liftVector;
+
+        public Vector3 LiftWithoutDragVector => _liftForce * Vector3.Cross(_relativeWind, transform.right).normalized;
+        public Vector3 InducedDragVector => _liftVector - LiftWithoutDragVector;
 
         private void Awake() {
             if (!_plane) Debug.LogWarning("AerodynamicEffector: no plane assigned");
@@ -106,6 +110,20 @@ namespace Planes.Aerodynamics {
             _rb.AddForceAtPosition(_liftVector, transform.position, ForceMode.Force);
         }
 
+        public Vector3 GetLiftWithoutDrag() => _liftForce * Vector3.Cross(_relativeWind, transform.right).normalized;
+
+        public bool DebugDrawActive => enabled && gameObject.activeInHierarchy;
+        public void DebugDraw() {
+            DebugDrawer.Line(name + " wingChordLine", transform.position, transform.position + _wingChordLine * _gizmoAOALength, Color.white);
+            DebugDrawer.Line(name + " relativeWind", transform.position, transform.position + _relativeWind * _gizmoAOALength, Color.blue);
+            DebugDrawer.Line(name + " airflow", transform.position, transform.position + _airflow * _gizmoAOALength, Color.red);
+
+            Vector3 liftWithoutDragPos = transform.position + LiftWithoutDragVector * _gizmoLiftLength;
+            DebugDrawer.Line(name + " liftWithoutDrag", transform.position, liftWithoutDragPos, Color.white);
+            DebugDrawer.Line(name + " inducedDrag", liftWithoutDragPos, liftWithoutDragPos + InducedDragVector * _gizmoLiftLength, Color.red);
+            DebugDrawer.Line(name + " lift", transform.position, transform.position + _liftVector * _gizmoLiftLength, Color.cyan);
+        }
+
 #if UNITY_EDITOR
         private void OnDrawGizmosSelected() {
             Gizmos.color = Color.cyan;
@@ -130,12 +148,10 @@ namespace Planes.Aerodynamics {
             Gizmos.color = Color.red;
             Gizmos.DrawLine(transform.position, transform.position + _airflow * _gizmoAOALength);
 
-            Vector3 liftWithoutDragVector = _liftForce * Vector3.Cross(_relativeWind, transform.right).normalized;
-            Vector3 liftWithoutDragVectorPos = transform.position + liftWithoutDragVector * _gizmoLiftLength;
-            Vector3 dragVector = _liftVector - liftWithoutDragVector;
-            Gizmos.DrawLine(liftWithoutDragVectorPos, liftWithoutDragVectorPos + dragVector * _gizmoLiftLength);
+            Vector3 liftWithoutDragPos = transform.position + LiftWithoutDragVector * _gizmoLiftLength;
+            Gizmos.DrawLine(liftWithoutDragPos, liftWithoutDragPos + InducedDragVector * _gizmoLiftLength);
             Gizmos.color = Color.white;
-            Gizmos.DrawLine(transform.position, liftWithoutDragVectorPos);
+            Gizmos.DrawLine(transform.position, liftWithoutDragPos);
             Gizmos.color = Color.cyan;
             Gizmos.DrawLine(transform.position, transform.position + _liftVector * _gizmoLiftLength);
         }
