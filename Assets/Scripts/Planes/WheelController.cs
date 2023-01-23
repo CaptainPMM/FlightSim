@@ -65,8 +65,11 @@ namespace Planes {
             _wc.GetWorldPose(out _pos, out _rot);
             _wheelModel.SetPositionAndRotation(_pos, _rot);
 
-            // Hack to fix the wheel start roll stuck bug
-            if (_wc.isGrounded && _torque == 0f && _attachedProp.RPM >= _startRollPropRPM && _wc.rpm < 1f) Torque = 0.01f;
+            // Parking brake effect (fixes start rolling stuck bug)
+            if (_wc.isGrounded && _wc.rpm < 1f && _torque <= 0.1f) {
+                if (_attachedProp.RPM >= _startRollPropRPM) Torque = 0.01f;
+                else Torque = 0f;
+            }
         }
 
         private void UpdateValues() {
