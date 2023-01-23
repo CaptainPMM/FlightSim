@@ -5,6 +5,8 @@ namespace Planes {
         [Header("Setup")]
         [SerializeField] private Transform _model = null;
         [SerializeField] private ControlSurfaceType _type = ControlSurfaceType.Aileron;
+
+        [Header("Settings")]
         [SerializeField] private bool _invert = false;
         [SerializeField, Range(0f, 90f)] private float _maxPosDeflection = 45f;
         [SerializeField, Range(0f, 90f)] private float _maxNegDeflection = 45f;
@@ -15,7 +17,7 @@ namespace Planes {
         public float MaxNegDeflection => _maxNegDeflection;
 
 #if UNITY_EDITOR
-        [Header("Setup/Gizmos")]
+        [Header("Settings/Gizmos")]
         [SerializeField, Min(0f)] private float _gizmoDeflectionLength = 1f;
         [SerializeField] private Color _gizmoDeflectionColor = Color.white;
         [SerializeField] private Color _gizmoSurfColor = Color.white;

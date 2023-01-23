@@ -522,6 +522,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6068610357475485658}
   - component: {fileID: 2537430044097078191}
+  - component: {fileID: 5386062395752764381}
   m_Layer: 0
   m_Name: Prop Controller
   m_TagString: Untagged
@@ -566,6 +567,22 @@ MonoBehaviour:
   _RPMChangeRate: 500
   _RPM: 0
   _targetRPM: 0
+--- !u!114 &5386062395752764381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 265302629362676969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b0caebd0b66b4180b5444f8e0819bf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _plane: {fileID: 8496504930888117548}
+  _prop: {fileID: 2537430044097078191}
+  _propClockwiseRot: 0
+  _strength: 0.1
 --- !u!1 &303418147976213617
 GameObject:
   m_ObjectHideFlags: 0

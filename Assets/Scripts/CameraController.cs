@@ -4,6 +4,8 @@ public class CameraController : MonoBehaviour {
     [Header("Setup")]
     [SerializeField] private Transform _camAnchor;
     [SerializeField] private Camera _cam;
+
+    [Header("Settings")]
     [SerializeField] private Vector2 _startRot = new Vector2(22f, 0f);
     [SerializeField, Min(0f)] private float _startDist = 10f;
     [SerializeField, Min(0f)] private float _minDist = 0.1f;
@@ -12,7 +14,7 @@ public class CameraController : MonoBehaviour {
     [SerializeField] private Vector3 _movementBounds = new Vector3(10f, 3f, 10f);
 
 #if UNITY_EDITOR
-    [Header("Setup/Gizmos")]
+    [Header("Settings/Gizmos")]
     [SerializeField] private bool _gizmoShowMovBounds = true;
 #endif
 

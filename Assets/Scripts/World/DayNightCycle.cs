@@ -10,7 +10,7 @@ namespace World {
 
         private Light _light;
 
-        [Header("Setup")]
+        [Header("Settings")]
         [SerializeField] private bool _mainTimeSource = true;
         [SerializeField, Range(0f, 90f)] private float _sunMaxHeight = 55f;
         [SerializeField, Range(0f, 23.99f)] private float _startTime = DEFAULT_START_TIME;

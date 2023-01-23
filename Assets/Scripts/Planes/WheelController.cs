@@ -6,6 +6,8 @@ namespace Planes {
         [Header("Setup")]
         [SerializeField] private Transform _wheelModel = null;
         [SerializeField] private WheelFunction _wheelFunction = WheelFunction.None;
+
+        [Header("Settings")]
         [SerializeField, Min(0f)] private float _maxBrake = 1f;
         [SerializeField, Range(0f, 90f)] private float _maxSteerAngle = 90f;
         [SerializeField, Min(0f)] private float _maxTorque = 50f;
