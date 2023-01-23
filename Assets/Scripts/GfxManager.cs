@@ -34,6 +34,9 @@ public class GfxManager : MonoBehaviour {
     }
 
     private void Update() {
+        if (Input.GetKeyDown(KeyCode.Alpha1)) Time.timeScale *= 0.5f;
+        if (Input.GetKeyDown(KeyCode.Alpha2)) Time.timeScale *= 2f;
+
         if (Input.GetKeyDown(KeyCode.Alpha8)) EnableWater = !EnableWater;
         if (Input.GetKeyDown(KeyCode.Alpha9)) EnableClouds = !EnableClouds;
     }

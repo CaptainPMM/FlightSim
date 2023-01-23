@@ -1,6 +1,7 @@
 using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
+using Planes.Aerodynamics;
 
 namespace Utils {
     public class DebugDrawer : MonoBehaviour {
@@ -27,6 +28,7 @@ namespace Utils {
 
         private void Update() {
             if (Input.GetKeyDown(KeyCode.Alpha5)) Enable = !Enable;
+            if (Input.GetKeyDown(KeyCode.Alpha6)) PropEffector.EnableGizmos = !PropEffector.EnableGizmos;
 
             if (!Enable) return;
             foreach (IDebugDraw d in _drawings) if (d.DebugDrawActive) d.DebugDraw();

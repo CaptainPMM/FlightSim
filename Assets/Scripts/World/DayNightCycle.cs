@@ -38,8 +38,8 @@ namespace World {
         }
 
         private void Update() {
-            if (Input.GetKey(KeyCode.Alpha1)) DayDurationModifier += _dayDurModInputChange;
-            if (Input.GetKey(KeyCode.Alpha2)) DayDurationModifier = Mathf.Max(0.001f, DayDurationModifier - _dayDurModInputChange);
+            if (Input.GetKey(KeyCode.Alpha3)) DayDurationModifier += _dayDurModInputChange;
+            if (Input.GetKey(KeyCode.Alpha4)) DayDurationModifier = Mathf.Max(0.001f, DayDurationModifier - _dayDurModInputChange);
 
             CurrTime = (CurrTime + (Time.deltaTime / (_dayDuration * DayDurationModifier) * 24f)) % 24f;
 

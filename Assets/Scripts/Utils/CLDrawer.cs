@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 using Planes.Aerodynamics;
 
@@ -14,7 +15,7 @@ namespace Utils {
         private Vector3 _cl;
 
         private void Start() {
-            _liftEffectors = GetComponentsInChildren<AerodynamicEffector>();
+            _liftEffectors = GetComponentsInChildren<AerodynamicEffector>().Where(e => e.IncludeInCL).ToArray();
         }
 
         private bool UpdateCL() {

@@ -51,7 +51,7 @@ namespace UI {
             var interval = new WaitForSeconds(_UIUpdateInterval);
             while (true) {
                 if (_canvas.enabled) {
-                    _time.text = DayNightCycle.Main.GetTimeAsString();
+                    _time.text = DayNightCycle.Main.GetTimeAsString() + (Time.timeScale != 1f ? "*" : "");
 
                     int TAS = Mathf.RoundToInt(_plane.TAS);
                     _TAS.text = TAS.ToString();

@@ -537,11 +537,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 265302629362676969}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 1.511}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 3188838016984426980}
+  - {fileID: 872593575199041832}
+  - {fileID: 8868659966774238597}
+  - {fileID: 1090309914787013090}
+  - {fileID: 9066238448550911148}
   m_Father: {fileID: 7887468769942315969}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -557,48 +560,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f866431826be4f869e0f6b59a2f9fd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _plane: {fileID: 8496504930888117548}
   _model: {fileID: 1644879653529353693}
-  _forceOrigin: {fileID: 3188838016984426980}
   _idleRPM: 500
-  _maxRPM: 2000
+  _maxRPM: 2300
   _RPMChangeRate: 500
-  _propDiameter: 80
-  _propPitch: 5
-  _RPMThrustFactor:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 0.25
-      value: 0.025
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 4.5
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  _gizmoThrustLength: 0.001
   _RPM: 0
   _targetRPM: 0
 --- !u!1 &303418147976213617
@@ -700,6 +665,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _plane: {fileID: 8496504930888117548}
+  _includeInCL: 1
   _airDensitySL: 1.225
   _airDensityLapseRate: 0.0354
   _airDensity: 1.225
@@ -1105,6 +1071,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _plane: {fileID: 8496504930888117548}
+  _includeInCL: 1
   _airDensitySL: 1.225
   _airDensityLapseRate: 0.0354
   _airDensity: 1.225
@@ -1333,6 +1300,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _plane: {fileID: 8496504930888117548}
+  _includeInCL: 1
   _airDensitySL: 1.225
   _airDensityLapseRate: 0.0354
   _airDensity: 1.225
@@ -1449,6 +1417,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _plane: {fileID: 8496504930888117548}
+  _includeInCL: 1
   _airDensitySL: 1.225
   _airDensityLapseRate: 0.0354
   _airDensity: 1.225
@@ -1573,6 +1542,124 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.6, y: 1.6, z: 0.1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1761785777973220922
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8868659966774238597}
+  - component: {fileID: 7623305295318727875}
+  m_Layer: 0
+  m_Name: Prop U I
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8868659966774238597
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1761785777973220922}
+  m_LocalRotation: {x: 0.3535534, y: -0.3535534, z: -0.61237246, w: 0.61237246}
+  m_LocalPosition: {x: 0, y: 0.4, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 6068610357475485658}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: -60, z: -90}
+--- !u!114 &7623305295318727875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1761785777973220922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80de8a1c57b574a179c0a2893d534f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _plane: {fileID: 8496504930888117548}
+  _includeInCL: 0
+  _airDensitySL: 1.225
+  _airDensityLapseRate: 0.0354
+  _airDensity: 1.225
+  _wingAreaX: 0.15
+  _wingAreaZ: 0.5
+  _baseLift: 2.5
+  _AOALiftFactor:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 45
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 90
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _TASInducedDragFactor:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 200
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _gizmoLocationSize: 0.033
+  _gizmoShowWingArea: 1
+  _gizmoWingAreaOffset: {x: 0, y: 0, z: 0}
+  _gizmoWingAreaSwizzle: 2
+  _gizmoShowExtendedChordLine: 0
+  _gizmoExtendedChordLineLength: 0.5
+  _gizmoAOALength: 0.5
+  _gizmoLiftLength: 0.006
+  _gizmosForceEnable: 1
 --- !u!1 &1938329503300636223
 GameObject:
   m_ObjectHideFlags: 0
@@ -1629,6 +1716,124 @@ MonoBehaviour:
   _gizmoSurfColor: {r: 1, g: 1, b: 1, a: 1}
   _gizmoShowSurf: 1
   _deflection: -0
+--- !u!1 &2399953588084331688
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9066238448550911148}
+  - component: {fileID: 3245086163026630705}
+  m_Layer: 0
+  m_Name: Prop L I
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9066238448550911148
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2399953588084331688}
+  m_LocalRotation: {x: 0.3535534, y: 0.3535534, z: 0.61237246, w: 0.61237246}
+  m_LocalPosition: {x: 0, y: -0.4, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 6068610357475485658}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 60, z: 90}
+--- !u!114 &3245086163026630705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2399953588084331688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80de8a1c57b574a179c0a2893d534f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _plane: {fileID: 8496504930888117548}
+  _includeInCL: 0
+  _airDensitySL: 1.225
+  _airDensityLapseRate: 0.0354
+  _airDensity: 1.225
+  _wingAreaX: 0.15
+  _wingAreaZ: 0.5
+  _baseLift: 2.5
+  _AOALiftFactor:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 45
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 90
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _TASInducedDragFactor:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 200
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _gizmoLocationSize: 0.033
+  _gizmoShowWingArea: 1
+  _gizmoWingAreaOffset: {x: 0, y: 0, z: 0}
+  _gizmoWingAreaSwizzle: 2
+  _gizmoShowExtendedChordLine: 0
+  _gizmoExtendedChordLineLength: 0.5
+  _gizmoAOALength: 0.5
+  _gizmoLiftLength: 0.006
+  _gizmosForceEnable: 1
 --- !u!1 &2619741556504769616
 GameObject:
   m_ObjectHideFlags: 0
@@ -2117,6 +2322,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _plane: {fileID: 8496504930888117548}
+  _includeInCL: 1
   _airDensitySL: 1.225
   _airDensityLapseRate: 0.0354
   _airDensity: 1.225
@@ -2233,6 +2439,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _plane: {fileID: 8496504930888117548}
+  _includeInCL: 1
   _airDensitySL: 1.225
   _airDensityLapseRate: 0.0354
   _airDensity: 1.225
@@ -2349,6 +2556,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _plane: {fileID: 8496504930888117548}
+  _includeInCL: 1
   _airDensitySL: 1.225
   _airDensityLapseRate: 0.0354
   _airDensity: 1.225
@@ -2465,6 +2673,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _plane: {fileID: 8496504930888117548}
+  _includeInCL: 1
   _airDensitySL: 1.225
   _airDensityLapseRate: 0.0354
   _airDensity: 1.225
@@ -2599,6 +2808,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _plane: {fileID: 8496504930888117548}
+  _includeInCL: 1
   _airDensitySL: 1.225
   _airDensityLapseRate: 0.0354
   _airDensity: 1.225
@@ -2726,6 +2936,124 @@ MonoBehaviour:
   _gizmoSurfColor: {r: 1, g: 1, b: 1, a: 1}
   _gizmoShowSurf: 1
   _deflection: 0
+--- !u!1 &4220596712817936805
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1090309914787013090}
+  - component: {fileID: 1394211938939188080}
+  m_Layer: 0
+  m_Name: Prop L O
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1090309914787013090
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4220596712817936805}
+  m_LocalRotation: {x: 0.4304593, y: 0.4304593, z: 0.56098557, w: 0.56098557}
+  m_LocalPosition: {x: 0, y: -0.9, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 6068610357475485658}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 75, z: 90}
+--- !u!114 &1394211938939188080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4220596712817936805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80de8a1c57b574a179c0a2893d534f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _plane: {fileID: 8496504930888117548}
+  _includeInCL: 0
+  _airDensitySL: 1.225
+  _airDensityLapseRate: 0.0354
+  _airDensity: 1.225
+  _wingAreaX: 0.15
+  _wingAreaZ: 0.5
+  _baseLift: 2.5
+  _AOALiftFactor:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 45
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 90
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _TASInducedDragFactor:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 200
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _gizmoLocationSize: 0.033
+  _gizmoShowWingArea: 1
+  _gizmoWingAreaOffset: {x: 0, y: 0, z: 0}
+  _gizmoWingAreaSwizzle: 2
+  _gizmoShowExtendedChordLine: 0
+  _gizmoExtendedChordLineLength: 0.5
+  _gizmoAOALength: 0.5
+  _gizmoLiftLength: 0.006
+  _gizmosForceEnable: 1
 --- !u!1 &4304338148830234255
 GameObject:
   m_ObjectHideFlags: 0
@@ -2979,37 +3307,6 @@ MonoBehaviour:
   m_PointlightHDType: 0
   m_SpotLightShape: 0
   m_AreaLightShape: 0
---- !u!1 &4728529923010816081
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3188838016984426980}
-  m_Layer: 0
-  m_Name: Force Origin
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3188838016984426980
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4728529923010816081}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1.5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 1
-  m_Children: []
-  m_Father: {fileID: 6068610357475485658}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4939533493148810513
 GameObject:
   m_ObjectHideFlags: 0
@@ -3272,6 +3569,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _plane: {fileID: 8496504930888117548}
+  _includeInCL: 1
   _airDensitySL: 1.225
   _airDensityLapseRate: 0.0354
   _airDensity: 1.225
@@ -3406,6 +3704,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _plane: {fileID: 8496504930888117548}
+  _includeInCL: 1
   _airDensitySL: 1.225
   _airDensityLapseRate: 0.0354
   _airDensity: 1.225
@@ -3522,6 +3821,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _plane: {fileID: 8496504930888117548}
+  _includeInCL: 1
   _airDensitySL: 1.225
   _airDensityLapseRate: 0.0354
   _airDensity: 1.225
@@ -3745,6 +4045,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _plane: {fileID: 8496504930888117548}
+  _includeInCL: 1
   _airDensitySL: 1.225
   _airDensityLapseRate: 0.0354
   _airDensity: 1.225
@@ -3861,6 +4162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _plane: {fileID: 8496504930888117548}
+  _includeInCL: 1
   _airDensitySL: 1.225
   _airDensityLapseRate: 0.0354
   _airDensity: 1.225
@@ -4698,6 +5000,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _plane: {fileID: 8496504930888117548}
+  _includeInCL: 1
   _airDensitySL: 1.225
   _airDensityLapseRate: 0.0354
   _airDensity: 1.225
@@ -5637,6 +5940,124 @@ MonoBehaviour:
   _enableTime: 17
   _disableTime: 7
   _lightsEnabled: 0
+--- !u!1 &7682174055448764068
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 872593575199041832}
+  - component: {fileID: 2641841430002642727}
+  m_Layer: 0
+  m_Name: Prop U O
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &872593575199041832
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7682174055448764068}
+  m_LocalRotation: {x: 0.4304593, y: -0.4304593, z: -0.56098557, w: 0.56098557}
+  m_LocalPosition: {x: 0, y: 0.9, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 6068610357475485658}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: -75, z: -90}
+--- !u!114 &2641841430002642727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7682174055448764068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80de8a1c57b574a179c0a2893d534f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _plane: {fileID: 8496504930888117548}
+  _includeInCL: 0
+  _airDensitySL: 1.225
+  _airDensityLapseRate: 0.0354
+  _airDensity: 1.225
+  _wingAreaX: 0.15
+  _wingAreaZ: 0.5
+  _baseLift: 2.5
+  _AOALiftFactor:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 45
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 90
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _TASInducedDragFactor:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 200
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _gizmoLocationSize: 0.033
+  _gizmoShowWingArea: 1
+  _gizmoWingAreaOffset: {x: 0, y: 0, z: 0}
+  _gizmoWingAreaSwizzle: 2
+  _gizmoShowExtendedChordLine: 0
+  _gizmoExtendedChordLineLength: 0.5
+  _gizmoAOALength: 0.5
+  _gizmoLiftLength: 0.006
+  _gizmosForceEnable: 1
 --- !u!1 &7814920693619330112
 GameObject:
   m_ObjectHideFlags: 0
@@ -5682,6 +6103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _plane: {fileID: 8496504930888117548}
+  _includeInCL: 1
   _airDensitySL: 1.225
   _airDensityLapseRate: 0.0354
   _airDensity: 1.225
@@ -5910,6 +6332,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _plane: {fileID: 8496504930888117548}
+  _includeInCL: 1
   _airDensitySL: 1.225
   _airDensityLapseRate: 0.0354
   _airDensity: 1.225
@@ -6044,6 +6467,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _plane: {fileID: 8496504930888117548}
+  _includeInCL: 1
   _airDensitySL: 1.225
   _airDensityLapseRate: 0.0354
   _airDensity: 1.225
@@ -6178,6 +6602,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _plane: {fileID: 8496504930888117548}
+  _includeInCL: 1
   _airDensitySL: 1.225
   _airDensityLapseRate: 0.0354
   _airDensity: 1.225

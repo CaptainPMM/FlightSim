@@ -7,68 +7,73 @@ namespace Planes.Aerodynamics {
         public const float AIR_DENSITY_LAPSE_RATE_DEFAULT = 0.0354f; // 𝚫 air density / 1000ft
 
         [Header("Setup")]
-        [SerializeField] private PlaneController _plane;
+        [SerializeField] protected PlaneController _plane = null;
+        [SerializeField] protected bool _includeInCL = true;
+
+        public bool IncludeInCL => _includeInCL;
 
         [Header("Settings/Lift")]
-        [SerializeField, Min(0f)] private float _airDensitySL = AIR_DENSITY_SL; // kg/m^3
-        [SerializeField, Min(0f)] private float _airDensityLapseRate = AIR_DENSITY_LAPSE_RATE_DEFAULT; // 𝚫 air density / 1000ft
-        [SerializeField, Min(0f)] private float _airDensity = AIR_DENSITY_SL; // [d] kg/m^3 (standard sea level)
-        [SerializeField, Min(0f)] private float _wingAreaX = 1f; // m -> X * Z => [s] in m^2
-        [SerializeField, Min(0f)] private float _wingAreaZ = 1f; // m -> X * Z => [s] in m^2
-        [SerializeField] private float _baseLift = 1f; // newtons
-        [SerializeField] private AnimationCurve _AOALiftFactor = AnimationCurve.Linear(-20f, -1f, 20f, 1f); // base lift * f(AOA) = [CL] lift coefficient
+        [SerializeField, Min(0f)] protected float _airDensitySL = AIR_DENSITY_SL; // kg/m^3
+        [SerializeField, Min(0f)] protected float _airDensityLapseRate = AIR_DENSITY_LAPSE_RATE_DEFAULT; // 𝚫 air density / 1000ft
+        [SerializeField, Min(0f)] protected float _airDensity = AIR_DENSITY_SL; // [d] kg/m^3 (standard sea level)
+        [SerializeField, Min(0f)] protected float _wingAreaX = 1f; // m -> X * Z => [s] in m^2
+        [SerializeField, Min(0f)] protected float _wingAreaZ = 1f; // m -> X * Z => [s] in m^2
+        [SerializeField] protected float _baseLift = 1f; // newtons
+        [SerializeField] protected AnimationCurve _AOALiftFactor = AnimationCurve.Linear(-20f, -1f, 20f, 1f); // base lift * f(AOA) = [CL] lift coefficient
 
         [Header("Settings/Drag")]
-        [SerializeField] private AnimationCurve _TASInducedDragFactor = AnimationCurve.Linear(0f, 1f, 200f, 0.1f);
+        [SerializeField] protected AnimationCurve _TASInducedDragFactor = AnimationCurve.Linear(0f, 1f, 200f, 0.1f);
 
 #if UNITY_EDITOR
         [Header("Settings/Gizmos")]
-        [SerializeField, Min(0f)] private float _gizmoLocationSize = 0.2f;
-        [SerializeField] private bool _gizmoShowWingArea = true;
-        [SerializeField] private Vector3 _gizmoWingAreaOffset = Vector3.zero;
-        [SerializeField] private bool _gizmoWingAreaSwizzle = false;
-        [SerializeField] private bool _gizmoShowExtendedChordLine = false;
-        [SerializeField, Min(0f)] private float _gizmoExtendedChordLineLength = 1f;
+        [SerializeField, Min(0f)] protected float _gizmoLocationSize = 0.2f;
+        [SerializeField] protected bool _gizmoShowWingArea = true;
+        [SerializeField] protected Vector3 _gizmoWingAreaOffset = Vector3.zero;
+        [SerializeField] protected WingAreaSwizzle _gizmoWingAreaSwizzle = WingAreaSwizzle.XZ;
+        [SerializeField] protected bool _gizmoShowExtendedChordLine = false;
+        [SerializeField, Min(0f)] protected float _gizmoExtendedChordLineLength = 1f;
 #endif
-        [SerializeField, Min(0f)] private float _gizmoAOALength = 1f;
-        [SerializeField, Min(0f)] private float _gizmoLiftLength = 1f;
+        [SerializeField, Min(0f)] protected float _gizmoAOALength = 1f;
+        [SerializeField, Min(0f)] protected float _gizmoLiftLength = 1f;
 
-        private Rigidbody _rb;
+        protected Rigidbody _rb;
 
-        private float _ALT;
+        protected float _ALT;
 
-        private Vector3 _oldPos;
-        private Vector3 _velocity;
-        private float _speed;
-        private float _TAS;
+        protected Vector3 _oldPos;
+        protected Vector3 _velocity;
+        protected float _speed;
+        protected float _TAS;
 
-        private Vector3 _wingChordLine;
-        private Vector3 _relativeWind;
-        private float _AOA;
+        protected Vector3 _wingChordLine;
+        protected Vector3 _relativeWind;
+        protected float _AOA;
 
-        private Vector3 _airflow;
+        protected Vector3 _airflow;
 
-        private float _liftForce;
-        private Vector3 _liftDirection;
-        private Vector3 _liftVector;
+        protected float _liftForce;
+        protected Vector3 _liftDirection;
+        protected Vector3 _liftVector;
 
         public float LiftForce => _liftForce;
         public Vector3 LiftDirection => _liftDirection;
         public Vector3 LiftVector => _liftVector;
 
-        public Vector3 LiftWithoutDragVector => _liftForce * Vector3.Cross(_relativeWind, transform.right).normalized;
-        public Vector3 InducedDragVector => _liftVector - LiftWithoutDragVector;
+        protected Vector3 _liftWithoutDragVector;
 
-        private void Awake() {
-            if (!_plane) Debug.LogWarning("AerodynamicEffector: no plane assigned");
+        public Vector3 LiftWithoutDragVector => _liftWithoutDragVector;
+        public Vector3 InducedDragVector => _liftVector - _liftWithoutDragVector;
+
+        protected virtual void Awake() {
+            if (!_plane) Debug.LogWarning($"{this.GetType().Name}: no plane assigned");
             else _rb = _plane.GetComponent<Rigidbody>();
         }
 
-        private void Start() {
+        protected virtual void Start() {
             _oldPos = transform.position;
         }
 
-        private void FixedUpdate() {
+        protected virtual void FixedUpdate() {
             UpdateAirDensity();
             UpdateVelocity();
             UpdateAOA();
@@ -76,14 +81,14 @@ namespace Planes.Aerodynamics {
             ApplyForces();
         }
 
-        private void UpdateAirDensity() {
+        protected virtual void UpdateAirDensity() {
             _ALT = transform.position.y * 3.28084f; // m to feet conversion
 
             if (_airDensityLapseRate == 0f) return;
             _airDensity = _airDensitySL - _airDensityLapseRate * _ALT / 1000f;
         }
 
-        private void UpdateVelocity() {
+        protected virtual void UpdateVelocity() {
             _velocity = (transform.position - _oldPos) / Time.fixedDeltaTime;
             _oldPos = transform.position;
 
@@ -91,48 +96,55 @@ namespace Planes.Aerodynamics {
             _TAS = _speed * 1.94384f; // m/s to knots conversion
         }
 
-        private void UpdateAOA() {
+        protected virtual void UpdateAOA() {
             _wingChordLine = transform.forward;
             _relativeWind = Vector3.ProjectOnPlane(_velocity, transform.right).normalized;
             _AOA = Vector3.SignedAngle(_wingChordLine, _relativeWind, transform.right);
         }
 
-        private void UpdateLift() {
+        protected virtual void UpdateLift() {
             // Induced drag -> tilt lift vector backwards based on TAS e.g. |_ => /
             _airflow = Vector3.Lerp(_relativeWind, _wingChordLine, _TASInducedDragFactor.Evaluate(_TAS));
 
             _liftForce = 0.5f * _airDensity * Mathf.Pow(_speed, 2f) * (_wingAreaX * _wingAreaZ) * _baseLift * _AOALiftFactor.Evaluate(_AOA); // L = (1/2) * d * v^2 * s * CL
             _liftDirection = Vector3.Cross(_airflow, transform.right).normalized; // perpendicular to airflow
             _liftVector = _liftForce * _liftDirection;
+
+            _liftWithoutDragVector = _liftForce * Vector3.Cross(_relativeWind, transform.right).normalized;
         }
 
-        private void ApplyForces() {
+        protected virtual void ApplyForces() {
             _rb.AddForceAtPosition(_liftVector, transform.position, ForceMode.Force);
         }
 
-        public Vector3 GetLiftWithoutDrag() => _liftForce * Vector3.Cross(_relativeWind, transform.right).normalized;
-
-        public bool DebugDrawActive => enabled && gameObject.activeInHierarchy;
-        public void DebugDraw() {
+        public virtual bool DebugDrawActive => enabled && gameObject.activeInHierarchy;
+        public virtual void DebugDraw() {
             DebugDrawer.Line(name + " wingChordLine", transform.position, transform.position + _wingChordLine * _gizmoAOALength, Color.white);
             DebugDrawer.Line(name + " relativeWind", transform.position, transform.position + _relativeWind * _gizmoAOALength, Color.blue);
             DebugDrawer.Line(name + " airflow", transform.position, transform.position + _airflow * _gizmoAOALength, Color.red);
 
-            Vector3 liftWithoutDragPos = transform.position + LiftWithoutDragVector * _gizmoLiftLength;
+            Vector3 liftWithoutDragPos = transform.position + _liftWithoutDragVector * _gizmoLiftLength;
             DebugDrawer.Line(name + " liftWithoutDrag", transform.position, liftWithoutDragPos, Color.white);
             DebugDrawer.Line(name + " inducedDrag", liftWithoutDragPos, liftWithoutDragPos + InducedDragVector * _gizmoLiftLength, Color.red);
             DebugDrawer.Line(name + " lift", transform.position, transform.position + _liftVector * _gizmoLiftLength, Color.cyan);
         }
 
 #if UNITY_EDITOR
-        private void OnDrawGizmosSelected() {
+        protected virtual void OnDrawGizmosSelected() {
             Gizmos.color = Color.cyan;
             Gizmos.DrawSphere(transform.position, _gizmoLocationSize);
             if (_gizmoShowWingArea) {
-                if (_gizmoWingAreaSwizzle)
-                    Gizmos.DrawWireCube(transform.position + _gizmoWingAreaOffset, new Vector3(0f, _wingAreaX, _wingAreaZ));
-                else
-                    Gizmos.DrawWireCube(transform.position + _gizmoWingAreaOffset, new Vector3(_wingAreaX, 0f, _wingAreaZ));
+                switch (_gizmoWingAreaSwizzle) {
+                    case WingAreaSwizzle.XZ:
+                        Gizmos.DrawWireCube(transform.position + _gizmoWingAreaOffset, new Vector3(_wingAreaX, 0f, _wingAreaZ));
+                        break;
+                    case WingAreaSwizzle.YZ:
+                        Gizmos.DrawWireCube(transform.position + _gizmoWingAreaOffset, new Vector3(0f, _wingAreaX, _wingAreaZ));
+                        break;
+                    case WingAreaSwizzle.XY:
+                        Gizmos.DrawWireCube(transform.position + _gizmoWingAreaOffset, new Vector3(_wingAreaX, _wingAreaZ, 0f));
+                        break;
+                }
             }
 
             if (_gizmoShowExtendedChordLine) {
@@ -148,12 +160,18 @@ namespace Planes.Aerodynamics {
             Gizmos.color = Color.red;
             Gizmos.DrawLine(transform.position, transform.position + _airflow * _gizmoAOALength);
 
-            Vector3 liftWithoutDragPos = transform.position + LiftWithoutDragVector * _gizmoLiftLength;
+            Vector3 liftWithoutDragPos = transform.position + _liftWithoutDragVector * _gizmoLiftLength;
             Gizmos.DrawLine(liftWithoutDragPos, liftWithoutDragPos + InducedDragVector * _gizmoLiftLength);
             Gizmos.color = Color.white;
             Gizmos.DrawLine(transform.position, liftWithoutDragPos);
             Gizmos.color = Color.cyan;
             Gizmos.DrawLine(transform.position, transform.position + _liftVector * _gizmoLiftLength);
+        }
+
+        protected enum WingAreaSwizzle : byte {
+            XZ,
+            YZ,
+            XY
         }
 #endif
     }
