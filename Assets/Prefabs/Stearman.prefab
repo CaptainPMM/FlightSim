@@ -1632,16 +1632,16 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
+      value: 1
+      inSlope: -0.010426063
+      outSlope: -0.010426063
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0
+      outWeight: 0.040384617
     - serializedVersion: 3
       time: 200
-      value: 0
+      value: 0.1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -1806,16 +1806,16 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
+      value: 1
+      inSlope: -0.010426063
+      outSlope: -0.010426063
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0
+      outWeight: 0.040384617
     - serializedVersion: 3
       time: 200
-      value: 0
+      value: 0.1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -3026,16 +3026,16 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
+      value: 1
+      inSlope: -0.005930057
+      outSlope: -0.005930057
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0
+      outWeight: 0.03846154
     - serializedVersion: 3
-      time: 200
-      value: 0
+      time: 400
+      value: 0.1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -6030,16 +6030,16 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
+      value: 1
+      inSlope: -0.005930057
+      outSlope: -0.005930057
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0
+      outWeight: 0.03846154
     - serializedVersion: 3
-      time: 200
-      value: 0
+      time: 400
+      value: 0.1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
