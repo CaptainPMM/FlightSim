@@ -5,16 +5,20 @@ namespace Planes {
         [Header("Setup")]
         [SerializeField] private Transform _model = null;
         [SerializeField] private ControlSurfaceType _type = ControlSurfaceType.Aileron;
-
-        [Header("Settings")]
         [SerializeField] private bool _invert = false;
-        [SerializeField, Range(0f, 90f)] private float _maxPosDeflection = 45f;
-        [SerializeField, Range(0f, 90f)] private float _maxNegDeflection = 45f;
 
         public ControlSurfaceType Type => _type;
         public bool Invert => _invert;
+
+        [Header("Settings")]
+        [SerializeField, Range(0f, 90f)] private float _maxPosDeflection = 45f;
+        [SerializeField, Range(0f, 90f)] private float _maxNegDeflection = 45f;
+        [SerializeField, Range(0f, 90f)] private float _maxTrim = 10f;
+        [SerializeField, Min(0f)] private float _trimSpeed = 1f;
+
         public float MaxPosDeflection => _maxPosDeflection;
         public float MaxNegDeflection => _maxNegDeflection;
+        public float TrimSpeed => _trimSpeed * Time.deltaTime;
 
 #if UNITY_EDITOR
         [Header("Settings/Gizmos")]
@@ -26,32 +30,34 @@ namespace Planes {
 
         [Header("Runtime")]
         [SerializeField] private float _deflection = 0f;
+        [SerializeField] private float _trim = 0f;
 
         public float Deflection {
-            get => _invert ? -_deflection : _deflection;
-            set {
-                _deflection = Mathf.Clamp(value, -_maxNegDeflection, _maxPosDeflection);
-                if (_type == ControlSurfaceType.Rudder) transform.localRotation = Quaternion.Euler(0f, _invert ? -_deflection : _deflection, 0f);
-                else transform.localRotation = Quaternion.Euler(_invert ? -_deflection : _deflection, 0f, 0f);
-
-                // Sync model transform
-                _model.SetPositionAndRotation(transform.position, transform.rotation);
-            }
+            get => _deflection;
+            set => _deflection = Mathf.Clamp(value, -_maxNegDeflection, _maxPosDeflection) + _trim;
         }
 
-        public float RawDeflection => _deflection; // without invert effect
+        public float RawDeflection => _deflection - _trim; // without trim effect
+
+        public float Trim {
+            get => _trim;
+            set => _trim = Mathf.Clamp(value, -_maxTrim, _maxTrim);
+        }
+
+        private Vector3 _rotAxis;
 
         private void Awake() {
             if (!_model) Debug.LogWarning("ControlSurfaceController: no model assigned");
+
+            if (_type == ControlSurfaceType.Rudder) _rotAxis = Vector3.up * (_invert ? -1 : 1);
+            else _rotAxis = Vector3.right * (_invert ? -1 : 1);
         }
 
-        private void Start() {
-            UpdateValues();
-        }
+        private void Update() {
+            transform.localRotation = Quaternion.Euler(_rotAxis * _deflection);
 
-        private void UpdateValues() {
-            if (!_model) return;
-            Deflection = _deflection;
+            // Sync model transform
+            _model.SetPositionAndRotation(transform.position, transform.rotation);
         }
 
         [ContextMenu("Set pos to model")]
@@ -69,11 +75,6 @@ namespace Planes {
         }
 
 #if UNITY_EDITOR
-        private void OnValidate() {
-            SetPosToModel();
-            UpdateValues();
-        }
-
         private void OnDrawGizmosSelected() {
             Gizmos.color = _gizmoDeflectionColor;
             if (_type == ControlSurfaceType.Rudder) {

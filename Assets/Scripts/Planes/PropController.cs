@@ -4,9 +4,9 @@ namespace Planes {
     public class PropController : MonoBehaviour {
         [Header("Setup")]
         [SerializeField] private Transform _model = null;
+        [SerializeField] private bool _clockwiseRotation = true;
 
         [Header("Settings")]
-        [SerializeField] private bool _clockwiseRotation = true;
         [SerializeField, Min(0)] private int _idleRPM = 500;
         [SerializeField, Min(0)] private int _maxRPM = 2000;
         [SerializeField, Min(0f)] private float _RPMChangeRate = 200f;

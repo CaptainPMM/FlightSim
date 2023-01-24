@@ -273,11 +273,14 @@ MonoBehaviour:
   _invert: 1
   _maxPosDeflection: 30
   _maxNegDeflection: 30
+  _maxTrim: 10
+  _trimSpeed: 2
   _gizmoDeflectionLength: 1
   _gizmoDeflectionColor: {r: 1, g: 1, b: 1, a: 1}
   _gizmoSurfColor: {r: 1, g: 1, b: 1, a: 1}
   _gizmoShowSurf: 1
   _deflection: 0
+  _trim: -0
 --- !u!1 &169941547778159332
 GameObject:
   m_ObjectHideFlags: 0
@@ -1499,7 +1502,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _plane: {fileID: 8496504930888117548}
-  _includeInCL: 1
+  _includeInCL: 0
   _airDensitySL: 1.225
   _airDensityLapseRate: 0.0354
   _airDensity: 1.225
@@ -2066,11 +2069,14 @@ MonoBehaviour:
   _invert: 0
   _maxPosDeflection: 30
   _maxNegDeflection: 30
+  _maxTrim: 10
+  _trimSpeed: 2
   _gizmoDeflectionLength: 1
   _gizmoDeflectionColor: {r: 1, g: 1, b: 1, a: 1}
   _gizmoSurfColor: {r: 1, g: 1, b: 1, a: 1}
   _gizmoShowSurf: 1
-  _deflection: -0
+  _deflection: 0
+  _trim: 0
 --- !u!1 &2399953588084331688
 GameObject:
   m_ObjectHideFlags: 0
@@ -2292,11 +2298,14 @@ MonoBehaviour:
   _invert: 0
   _maxPosDeflection: 30
   _maxNegDeflection: 30
+  _maxTrim: 10
+  _trimSpeed: 2
   _gizmoDeflectionLength: 1
   _gizmoDeflectionColor: {r: 1, g: 1, b: 1, a: 1}
   _gizmoSurfColor: {r: 1, g: 1, b: 1, a: 1}
   _gizmoShowSurf: 1
   _deflection: 0
+  _trim: 0
 --- !u!114 &5193198797841481862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3617,11 +3626,14 @@ MonoBehaviour:
   _invert: 0
   _maxPosDeflection: 35
   _maxNegDeflection: 35
+  _maxTrim: 10
+  _trimSpeed: 2
   _gizmoDeflectionLength: 1.5
   _gizmoDeflectionColor: {r: 1, g: 1, b: 1, a: 1}
   _gizmoSurfColor: {r: 1, g: 1, b: 1, a: 1}
   _gizmoShowSurf: 1
   _deflection: 0
+  _trim: 0
 --- !u!1 &4220596712817936805
 GameObject:
   m_ObjectHideFlags: 0
@@ -4939,7 +4951,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _plane: {fileID: 8496504930888117548}
-  _includeInCL: 1
+  _includeInCL: 0
   _airDensitySL: 1.225
   _airDensityLapseRate: 0.0354
   _airDensity: 1.225

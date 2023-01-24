@@ -64,6 +64,14 @@ namespace Planes {
             _controlSurfacesByType[ControlSurfaceType.Aileron].ForEach(cs => cs.AxisLerpDeflection(Input.GetAxis("Roll")));
             _controlSurfacesByType[ControlSurfaceType.Elevator].ForEach(cs => cs.AxisLerpDeflection(Input.GetAxis("Pitch")));
             _controlSurfacesByType[ControlSurfaceType.Rudder].ForEach(cs => cs.AxisLerpDeflection(Input.GetAxis("Yaw")));
+
+            // Trim inputs
+            if (Input.GetKey(KeyCode.Q)) _controlSurfacesByType[ControlSurfaceType.Aileron].ForEach(cs => cs.Trim -= cs.TrimSpeed);
+            if (Input.GetKey(KeyCode.E)) _controlSurfacesByType[ControlSurfaceType.Aileron].ForEach(cs => cs.Trim += cs.TrimSpeed);
+            if (Input.GetKey(KeyCode.R)) _controlSurfacesByType[ControlSurfaceType.Elevator].ForEach(cs => cs.Trim -= cs.TrimSpeed);
+            if (Input.GetKey(KeyCode.F)) _controlSurfacesByType[ControlSurfaceType.Elevator].ForEach(cs => cs.Trim += cs.TrimSpeed);
+            if (Input.GetKey(KeyCode.K)) _controlSurfacesByType[ControlSurfaceType.Rudder].ForEach(cs => cs.Trim += cs.TrimSpeed);
+            if (Input.GetKey(KeyCode.L)) _controlSurfacesByType[ControlSurfaceType.Rudder].ForEach(cs => cs.Trim -= cs.TrimSpeed);
         }
 
         private void ReadPropInputs() {

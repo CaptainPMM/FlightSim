@@ -10,8 +10,6 @@ namespace UI {
         [Header("Setup")]
         [SerializeField, Min(0f)] private float _UIUpdateInterval = 0.5f;
         [SerializeField] private PlaneController _plane;
-        [SerializeField, Min(0)] private int _stallTAS = 47;
-        [SerializeField, Min(0)] private int _warnTAS = 57;
         [SerializeField] private Text _time;
         [SerializeField] private Text _TAS;
         [SerializeField] private Text _ALT;
@@ -19,6 +17,10 @@ namespace UI {
         [SerializeField] private Text _RPM;
         [SerializeField] private Slider _thrust;
         [SerializeField] private Slider _brake;
+
+        [Header("Settings")]
+        [SerializeField, Min(0)] private int _stallTAS = 47;
+        [SerializeField, Min(0)] private int _warnTAS = 57;
 
         private Canvas _canvas = null;
 

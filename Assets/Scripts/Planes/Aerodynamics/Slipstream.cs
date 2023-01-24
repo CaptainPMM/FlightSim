@@ -7,9 +7,9 @@ namespace Planes.Aerodynamics {
         [Header("Setup")]
         [SerializeField] private PlaneController _plane = null;
         [SerializeField] private PropController _prop = null;
-        [SerializeField] private Vector3 _forceOffset = Vector3.zero;
 
         [Header("Settings")]
+        [SerializeField] private Vector3 _forceOffset = Vector3.zero;
         [SerializeField, Min(0f)] private float _strength = 1f;
 
 #if UNITY_EDITOR

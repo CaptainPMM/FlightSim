@@ -10,8 +10,10 @@ namespace World {
 
         private Light _light;
 
-        [Header("Settings")]
+        [Header("Setup")]
         [SerializeField] private bool _mainTimeSource = true;
+
+        [Header("Settings")]
         [SerializeField, Range(0f, 90f)] private float _sunMaxHeight = 55f;
         [SerializeField, Range(0f, 23.99f)] private float _startTime = DEFAULT_START_TIME;
         [SerializeField, Min(0f), Tooltip("86400 (seconds) is real-time")] private int _dayDuration = SECONDS_PER_DAY;
