@@ -562,6 +562,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _model: {fileID: 1644879653529353693}
+  _clockwiseRotation: 0
   _idleRPM: 500
   _maxRPM: 2300
   _RPMChangeRate: 500
@@ -580,9 +581,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _plane: {fileID: 8496504930888117548}
-  _prop: {fileID: 2537430044097078191}
-  _propClockwiseRot: 0
   _strength: 0.1
+  _gizmoLength: 0.01
 --- !u!1 &303418147976213617
 GameObject:
   m_ObjectHideFlags: 0
@@ -1861,6 +1861,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6677325015027702703}
   - component: {fileID: 6890574909389044687}
+  - component: {fileID: 5193198797841481862}
   m_Layer: 0
   m_Name: Rudder
   m_TagString: Untagged
@@ -1906,6 +1907,24 @@ MonoBehaviour:
   _gizmoSurfColor: {r: 1, g: 1, b: 1, a: 1}
   _gizmoShowSurf: 1
   _deflection: 0
+--- !u!114 &5193198797841481862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2619741556504769616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50260daa9789a48f2a5fb7cf9b77dcdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _plane: {fileID: 8496504930888117548}
+  _prop: {fileID: 2537430044097078191}
+  _forceOffset: {x: 0, y: -0.2, z: 0}
+  _strength: 0.02
+  _gizmoLength: 0.02
+  _gizmoLocationSize: 0.1
 --- !u!1 &2823179487004335219
 GameObject:
   m_ObjectHideFlags: 0

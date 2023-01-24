@@ -6,10 +6,12 @@ namespace Planes {
         [SerializeField] private Transform _model = null;
 
         [Header("Settings")]
+        [SerializeField] private bool _clockwiseRotation = true;
         [SerializeField, Min(0)] private int _idleRPM = 500;
         [SerializeField, Min(0)] private int _maxRPM = 2000;
         [SerializeField, Min(0f)] private float _RPMChangeRate = 200f;
 
+        public bool ClockwiseRotation => _clockwiseRotation;
         public int IdleRPM => _idleRPM;
         public int MaxRPM => _maxRPM;
 
@@ -32,17 +34,19 @@ namespace Planes {
 
         public bool EngineOn => _RPM >= _idleRPM;
 
+        private int _clockwiseMod;
         private float _deltaRot;
 
         private void Awake() {
             if (!_model) Debug.LogWarning("PropController: no model assigned");
+            _clockwiseMod = _clockwiseRotation ? -1 : 1;
         }
 
         private void Update() {
             _RPM = Mathf.MoveTowards(_RPM, _targetRPM, _RPMChangeRate * Time.deltaTime);
 
             if (_RPM > 0f) {
-                _deltaRot = (_RPM / 60f) * Time.deltaTime * 360f;
+                _deltaRot = (_RPM / 60f) * Time.deltaTime * 360f * _clockwiseMod;
                 transform.Rotate(0f, 0f, _deltaRot, Space.Self);
                 _model.Rotate(0f, 0f, _deltaRot, Space.Self);
             }
