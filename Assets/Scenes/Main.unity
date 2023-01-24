@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 5654.848, g: 6093.3286, b: 8942.063, a: 1}
+  m_IndirectSpecularColor: {r: 5656.9272, g: 6095.3755, b: 8944.392, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3354,6 +3354,21 @@ PrefabInstance:
         type: 3}
       propertyPath: _gizmoShowMovBounds
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3527205294196550867, guid: e1adc2eb35f7c454f84e237b778b21d2,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.000015214086
+      objectReference: {fileID: 0}
+    - target: {fileID: 3527205294196550867, guid: e1adc2eb35f7c454f84e237b778b21d2,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.9999851
+      objectReference: {fileID: 0}
+    - target: {fileID: 3527205294196550867, guid: e1adc2eb35f7c454f84e237b778b21d2,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.0000808239
       objectReference: {fileID: 0}
     - target: {fileID: 4242275496905009844, guid: e1adc2eb35f7c454f84e237b778b21d2,
         type: 3}
