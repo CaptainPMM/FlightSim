@@ -59,7 +59,7 @@ namespace UI {
                     else if (TAS <= _warnTAS) _TAS.color = Color.yellow;
                     else _TAS.color = Color.black;
 
-                    _ALT.text = Mathf.RoundToInt(_plane.ALT).ToString();
+                    _ALT.text = Mathf.RoundToInt(_plane.MSL).ToString();
                     _VS.text = Mathf.RoundToInt(_plane.VS).ToString();
 
                     PropController prop = _plane.GetProp(0);

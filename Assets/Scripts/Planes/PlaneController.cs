@@ -14,7 +14,7 @@ namespace Planes {
 
         public Vector3 Velocity => _rb.velocity;
         public float TAS => _rb.velocity.magnitude * 1.94384f; // m/s to knots conversion
-        public float ALT => transform.position.y * 3.28084f; // m to feet conversion
+        public float MSL => transform.position.y * 3.28084f; // m to feet conversion
         public float VS => _rb.velocity.y * 3.28084f * 60f; // m to feet/min conversion
 
         private Rigidbody _rb;

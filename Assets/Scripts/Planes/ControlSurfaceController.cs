@@ -39,7 +39,7 @@ namespace Planes {
             }
         }
 
-        public float RawDeflection => _deflection; // Without invert effect
+        public float RawDeflection => _deflection; // without invert effect
 
         private void Awake() {
             if (!_model) Debug.LogWarning("ControlSurfaceController: no model assigned");

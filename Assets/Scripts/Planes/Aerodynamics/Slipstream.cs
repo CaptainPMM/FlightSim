@@ -47,7 +47,7 @@ namespace Planes.Aerodynamics {
         private void OnDrawGizmosSelected() {
             Gizmos.color = Color.green;
             Gizmos.DrawLine(_forcePos, _forcePos + _forceVector * _gizmoLength);
-            Gizmos.DrawSphere(transform.position + transform.TransformVector(_forceOffset), _gizmoLocationSize); // Works in editor time as well
+            Gizmos.DrawSphere(transform.position + transform.TransformVector(_forceOffset), _gizmoLocationSize); // works in editor time as well
         }
 #endif
     }

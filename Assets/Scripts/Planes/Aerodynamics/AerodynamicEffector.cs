@@ -24,6 +24,12 @@ namespace Planes.Aerodynamics {
         [Header("Settings/Drag")]
         [SerializeField] protected AnimationCurve _TASInducedDragFactor = AnimationCurve.Linear(0f, 1f, 200f, 0.1f);
 
+        [Header("Settings/Ground Effect")]
+        [SerializeField] protected bool _useGroundEffect = true;
+        [SerializeField] protected LayerMask _groundLayers;
+        [SerializeField] protected AnimationCurve _groundEffectAGLLiftFactor = AnimationCurve.Linear(0f, 1.5f, 32f, 1f);
+        [SerializeField] protected AnimationCurve _groundEffectAGLDragFactor = AnimationCurve.Linear(0f, 0.15f, 32f, 1f);
+
 #if UNITY_EDITOR
         [Header("Settings/Gizmos")]
         [SerializeField, Min(0f)] protected float _gizmoLocationSize = 0.2f;
@@ -38,7 +44,8 @@ namespace Planes.Aerodynamics {
 
         protected Rigidbody _rb;
 
-        protected float _ALT;
+        protected float _MSL;
+        protected float _AGL;
 
         protected Vector3 _oldPos;
         protected Vector3 _velocity;
@@ -74,6 +81,7 @@ namespace Planes.Aerodynamics {
         }
 
         protected virtual void FixedUpdate() {
+            UpdateAltitudes();
             UpdateAirDensity();
             UpdateVelocity();
             UpdateAOA();
@@ -81,11 +89,17 @@ namespace Planes.Aerodynamics {
             ApplyForces();
         }
 
-        protected virtual void UpdateAirDensity() {
-            _ALT = transform.position.y * 3.28084f; // m to feet conversion
+        protected virtual void UpdateAltitudes() {
+            _MSL = transform.position.y * 3.28084f; // m to feet conversion
 
+            if (Physics.Raycast(transform.position, -_liftDirection, out RaycastHit hit, Mathf.Infinity, _groundLayers)) {
+                _AGL = Vector3.Distance(hit.point, transform.position) * 3.28084f; // m to feet conversion
+            } else _AGL = _MSL;
+        }
+
+        protected virtual void UpdateAirDensity() {
             if (_airDensityLapseRate == 0f) return;
-            _airDensity = _airDensitySL - _airDensityLapseRate * _ALT / 1000f;
+            _airDensity = _airDensitySL - _airDensityLapseRate * _MSL / 1000f;
         }
 
         protected virtual void UpdateVelocity() {
@@ -103,10 +117,11 @@ namespace Planes.Aerodynamics {
         }
 
         protected virtual void UpdateLift() {
-            // Induced drag -> tilt lift vector backwards based on TAS e.g. |_ => /
-            _airflow = Vector3.Lerp(_relativeWind, _wingChordLine, _TASInducedDragFactor.Evaluate(_TAS));
+            // Induced drag -> tilt lift vector backwards based on TAS e.g. |_ => / [AND ground effect?]
+            _airflow = Vector3.Lerp(_relativeWind, _wingChordLine, _TASInducedDragFactor.Evaluate(_TAS) * (_useGroundEffect ? _groundEffectAGLDragFactor.Evaluate(_AGL) : 1f));
 
             _liftForce = 0.5f * _airDensity * Mathf.Pow(_speed, 2f) * (_wingAreaX * _wingAreaZ) * _baseLift * _AOALiftFactor.Evaluate(_AOA); // L = (1/2) * d * v^2 * s * CL
+            if (_useGroundEffect) _liftForce *= _groundEffectAGLLiftFactor.Evaluate(_AGL); // [ground effect?]
             _liftDirection = Vector3.Cross(_airflow, transform.right).normalized; // perpendicular to airflow
             _liftVector = _liftForce * _liftDirection;
 
