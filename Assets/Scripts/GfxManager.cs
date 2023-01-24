@@ -7,10 +7,12 @@ public class GfxManager : MonoBehaviour {
 
     [Header("Setup")]
     [SerializeField] private Volume _activeVolume = null;
+    [SerializeField] private HDAdditionalCameraData _activeCam = null;
 
     [Header("Settings")]
     [SerializeField] private bool _enableWater = true;
     [SerializeField] private bool _enableClouds = true;
+    [SerializeField] private HDAdditionalCameraData.AntialiasingMode _antiAliasing = HDAdditionalCameraData.AntialiasingMode.FastApproximateAntialiasing;
 
     public bool EnableWater {
         get => _enableWater;
@@ -28,9 +30,18 @@ public class GfxManager : MonoBehaviour {
         }
     }
 
+    public HDAdditionalCameraData.AntialiasingMode AntiAliasing {
+        get => _antiAliasing;
+        set {
+            _antiAliasing = value;
+            _activeCam.antialiasing = _antiAliasing;
+        }
+    }
+
     private void Awake() {
         Inst = this;
         if (!_activeVolume) Debug.LogWarning("GfxManager: no active volume assigned");
+        if (!_activeCam) Debug.LogWarning("GfxManager: no active cam assigned");
     }
 
     private void Update() {
@@ -39,6 +50,7 @@ public class GfxManager : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.Alpha8)) EnableWater = !EnableWater;
         if (Input.GetKeyDown(KeyCode.Alpha9)) EnableClouds = !EnableClouds;
+        if (Input.GetKeyDown(KeyCode.Y)) AntiAliasing = (HDAdditionalCameraData.AntialiasingMode)(((int)_antiAliasing + 1) % System.Enum.GetValues(typeof(HDAdditionalCameraData.AntialiasingMode)).Length);
     }
 
 #if UNITY_EDITOR
@@ -46,6 +58,9 @@ public class GfxManager : MonoBehaviour {
         if (!_activeVolume) return;
         EnableWater = _enableWater;
         EnableClouds = _enableClouds;
+
+        if (!_activeCam) return;
+        AntiAliasing = _antiAliasing;
     }
 #endif
 }

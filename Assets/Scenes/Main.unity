@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 7683.8643, g: 6975.837, b: 7945.0635, a: 1}
+  m_IndirectSpecularColor: {r: 7727.06, g: 7014.6104, b: 7981.1265, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2000,8 +2000,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _activeVolume: {fileID: 432432460}
+  _activeCam: {fileID: 2065610313}
   _enableWater: 1
   _enableClouds: 1
+  _antiAliasing: 1
 --- !u!1 &506550701
 GameObject:
   m_ObjectHideFlags: 0
@@ -5553,6 +5555,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2049587311}
   m_CullTransparentMesh: 1
+--- !u!114 &2065610313 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1823688468, guid: e1adc2eb35f7c454f84e237b778b21d2,
+    type: 3}
+  m_PrefabInstance: {fileID: 397854351}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23c1ce4fb46143f46bc5cb5224c934f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2139368989
 GameObject:
   m_ObjectHideFlags: 0
