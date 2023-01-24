@@ -84,6 +84,6 @@ namespace Planes {
         private void OnValidate() {
             if (Application.isPlaying && _wc) UpdateValues();
         }
-    }
 #endif
+    }
 }

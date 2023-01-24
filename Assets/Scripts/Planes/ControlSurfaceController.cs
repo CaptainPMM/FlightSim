@@ -90,6 +90,6 @@ namespace Planes {
             Gizmos.color = _gizmoSurfColor;
             Gizmos.DrawWireCube(bounds.center, bounds.extents * 2f);
         }
-    }
 #endif
+    }
 }

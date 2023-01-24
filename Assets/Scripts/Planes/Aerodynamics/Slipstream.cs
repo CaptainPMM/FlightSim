@@ -14,9 +14,9 @@ namespace Planes.Aerodynamics {
 
 #if UNITY_EDITOR
         [Header("Settings/Gizmos")]
-        [SerializeField] private float _gizmoLength = 1f;
         [SerializeField] private float _gizmoLocationSize = 0.2f;
 #endif
+        [SerializeField] private float _gizmoLength = 1f;
 
         private Rigidbody _rb;
         private Vector3 _forcePos;

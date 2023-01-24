@@ -2322,8 +2322,8 @@ MonoBehaviour:
   _prop: {fileID: 2537430044097078191}
   _forceOffset: {x: 0, y: -0.2, z: 0}
   _strength: 0.02
-  _gizmoLength: 0.02
   _gizmoLocationSize: 0.1
+  _gizmoLength: 0.02
 --- !u!1 &2823179487004335219
 GameObject:
   m_ObjectHideFlags: 0

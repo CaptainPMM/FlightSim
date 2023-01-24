@@ -10,10 +10,8 @@ namespace Planes.Aerodynamics {
         [Header("Settings")]
         [SerializeField, Min(0f)] private float _strength = 1f;
 
-#if UNITY_EDITOR
         [Header("Settings/Gizmos")]
         [SerializeField] private float _gizmoLength = 1f;
-#endif
 
         private Rigidbody _rb;
         private PropController _prop;
